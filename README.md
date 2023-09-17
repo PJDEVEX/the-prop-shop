@@ -1,108 +1,207 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+Project Title
 
-Welcome USER_NAME,
+Briefly describe your project and its purpose.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+**Table of Contents**
+<!-- TOC -->
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+- [Strategy](#strategy)
+- [Scope](#scope)
+- [Structure](#structure)
+  - [Frameworks/technologies used](#frameworkstechnologies-used)
+- [Skeleton](#skeleton)
+  - [Backend](#backend)
+    - [Technologies, libraries, and frameworks](#technologies-libraries-and-frameworks)
+    - [Database](#database)
+      - [*Database schema*](#database-schema)
+    - [API Documentation](#api-documentation)
+      - [*CRUD tables*](#crud-tables)
+      - [*Listings*](#listings)
+      - [*Filter and Search*](#filter-and-search)
+      - [*Save listing*](#save-listing)
+    - [Backend Testing](#backend-testing)
+- [Surface](#surface)
+  - [Frontend](#frontend)
+    - [Libraries](#libraries)
+    - [Enhanced User Experience with React](#enhanced-user-experience-with-react)
+    - [Color mood](#color-mood)
+- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Deployment](#deployment)
+- [Benchmarking](#benchmarking)
+- [References](#references)
 
-## Gitpod Reminders
+<!-- /TOC -->
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
+# Strategy
 
-A blue button should appear to click: _Make Public_,
+- High-level goals and objectives 
+- Target audience
+- Problem to be solves
+- Overarching strategies you have in mind.
 
-Another blue button should appear to click: _Open Browser_.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+# Scope
 
-A blue button should appear to click: _Make Public_,
+- features and functionalities 
+- user stories
+- project roadmap to help others understand the scope of the project.
 
-Another blue button should appear to click: _Open Browser_.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+# Structure
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- Describe the overall architecture and structure
+- frameworks/technologies used
+- Arrangement of the frontend and backend within the same repository
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## Frameworks/technologies used
+  1. [Auto Markdown TOC](https://open-vsx.org/extension/huntertran/auto-markdown-toc) - Generate TOC (table of contents) of headlines from parsed markdown file.
 
-------
 
-## Release History
+# Skeleton
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- basic layout
+    - directory structure
+    - key files. 
+    - overview of the main components, modules/packages used in your Django REST framework and React.js project.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## Backend
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+- Technologies, libraries, and frameworks
+- the data models 
+- authentication methods
+- API endpoints
+- how to add new features or endpoints to the backend.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### Technologies, libraries, and frameworks
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### Database
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+- the schema
+- data models
+- guidance on how to migrate and manage the database.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+#### *Database schema*
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### API Documentation
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+This Provides documentation on the available endpoints, request/response formats, and authentication methods. 
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+#### *CRUD tables*
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+#### *Listings*
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+This section provides an overview of the available API endpoints and their functionalities for managing listings. The API follows a CRUD (Create, Read, Update, Delete) structure for listing resources.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+|**HTTP Method**|**URI**|**CRUD Operation**|**View Name**|**Description**|**User Story #**|**Page**|
+| :- | :- | :- | :- | :- | :- | :- |
+|**GET**|/listings/|Read|ListAllListingsView|Returns a list of all listings.||Home|
+|**GET**|/listings/{listing\_id}|Read|RetrieveListingView|Returns the details of a specific listing by ID.|||
+|**POST**|/listings/|Create|CreateListingView|Creates a new listing.|||
+|**PUT**|/listings/{listing\_id}|Update|UpdateListingView|Updates an existing listing by ID.|||
+|**DELETE**|/listings/{listing\_id}|Delete|DeleteListingView|Deletes a listing by ID.|||
 
-------
+#### *Filter and Search*
 
-## FAQ about the uptime script
+The filter and search functionality allows users to search for properties based on specific criteria, save their searches, and view a list of their saved searches.
 
-**Why have you added this script?**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+|**HTTP Method**|**URI**|**CRUD Operation**|**View Name**|**Description**|**User Story #**|
+| :- | :- | :- | :- | :- | :- |
+|**GET**|/api/properties/search|Read|Search Listings|Returns a list of properties that match the search criteria.||
+|**POST**|/api/properties/filter|Read|Filter Listings|Returns a list of properties that match the filter criteria.||
+|**POST**|/api/properties/save-search|Create|Save Search|Saves a list of properties that match the search criteria.||
+|**GET**|/api/properties/saved-searches|Read|List Saved Searches|Returns a list of saved searches.||
+|**DELETE**|/api/properties/saved-searches/{id}|Delete|Delete Saved Search|Deletes a saved search.||
 
-**How will this affect me?**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+#### *Save listing*
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+|**HTTP Method**|**URI**|**CRUD Operation**|**View Name**|**Description**|
+| :- | :- | :- | :- | :- |
+|**POST**|/listings/save|Create|Save Listing|Saves a property listing to the user's saved listings.|
+|**GET**|/listings/saved|Read|List Saved Listings|Returns a list of the user's saved property listings.|
+|**GET**|/listings/saved/{listing\_id}|Read|Retrieve Saved Listing|Returns the details of a specific saved property listing.|
+|**DELETE**|/listings/saved/{listing\_id}|Delete|Delete Saved Listing|Deletes a property listing from the user's saved listings.|
 
-**So….?**
+### Backend Testing
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+# Surface
 
-**Can I opt out?**
+Discuss the user interface (UI) and user experience (UX) aspects of the project. Highlight the design principles, styles, and libraries used for creating the frontend while shareing screenshots and wireframes to give a visual sense of the project's appearance.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+- Technologies, libraries, and frameworks
+- Wireframe
+- screenshots
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+## Frontend
 
-**Anything more?**
+Describe the technologies, libraries, and frameworks used in the frontend of your project. Provide information on how the user interface is structured and how to customize or extend it.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+### Libraries
 
----
 
-Happy coding!
+|No|Library|Specific use in the application|Justification|
+| :- | :- | :- | :- |
+|||||
+|||||
+
+### Enhanced User Experience with React
+how the use of a React library and/or implemented feature has contributed to improved user experience.
+
+|No|Title|Description|
+| :- | :- | :- |
+|1|Responsive and Interactive UI|React's component-based architecture allows for smooth transitions and dynamic updates, <br>providing users with an engaging and interactive interface.|
+|2|Faster Load Times|React's Virtual DOM optimizes rendering, <br>resulting in quicker initial load times and a more responsive feel, which users will appreciate.|
+|3|Real-Time Updates|Leveraging React, we've implemented real-time updates,<br>` `ensuring that users receive the latest information instantly, <br>whether it's in a chat application, a live dashboard, or other real-time scenarios.|
+|4|Single-Page Application (SPA) Flow|By adopting React in our project, <br>we've created a seamless navigation experience within our application. <br>Users can move between sections without the interruption of full-page reloads.|
+|5|Progressive Web App (PWA) Features|With React, we've enabled features such as offline access and push notifications, <br>turning our web application into a PWA, which offers users a more app-like experience.|
+|6|Component Reusability|Our implementation of React promotes component reusability, <br>resulting in a consistent and user-friendly interface throughout the application.|
+|7|Optimized Rendering|React's efficient rendering process ensures smooth animations and transitions, <br>providing users with a polished and visually appealing experience.|
+|8|Error Handling|We've used React's error boundaries to gracefully handle errors, <br>ensuring that users receive informative error messages, <br>which helps build trust and confidence.|
+|9|State Management|React, coupled with Redux (or your chosen state management library), <br>ensures that our application's data remains consistent and responsive, <br>delivering a smoother user experience.|
+|10|Accessibility|By design, our React components prioritize accessibility, <br>making sure that all users, including those with disabilities, <br>can navigate and interact with our application effectively.|
+|11|Testing and Debugging|We've incorporated React's support for component-level testing and <br>debugging tools like React DevTools, <br>which means our application is more stable and reliable for users.|
+|12|Third-Party Libraries|The extensive React ecosystem has enabled us to integrate third-party libraries seamlessly, <br>enhancing the capabilities of our application and further enriching the user experience.|
+
+
+### Color mood
+
+
+# Getting Started
+
+Provide instructions for setting up and running your project locally. Include prerequisites, dependencies, or system requirements. This will guide users through the setup process for both the frontend and backend.
+
+# Installation
+
+List the specific steps required to install the project, including any environment variables or configuration files that need to be set up. including code snippets and commands for clarity.
+
+
+
+# Usage
+
+This section explain how users can interact with the project. Provide examples of common use cases and any necessary command-line instructions or API requests. Include information on how to start the development servers for both the frontend and backend.
+
+
+# Deployment
+
+Explain the deployment process for the project. Provide instructions for deploying both the frontend and backend to a production environment. Include any hosting or server-specific details.
+
+# Benchmarking
+By evaluating and comparing the features, performance, and user experience of Lanka Property Web, Ikman.lk, and Bayut, ThePropShop aims to set a high standard for the platform, ensuring it meets or exceeds industry-leading competitors in the real estate listing market. Please visit the sites for further information.
+
+1. [Lanka Property Web](https://www.lankapropertyweb.com/)
+1. [Ikman.lk](https://ikman.lk/)
+1. [bayut](https://www.bayut.com/)
+
+# References
+
+1. [Markdown Tips & Tricks 2022 - Markdown Crash Course](https://www.youtube.com/watch?v=ftOBvusMHjQ)
+2. 
+
