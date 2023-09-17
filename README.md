@@ -59,6 +59,7 @@ Briefly describe your project and its purpose.
 
 ## Frameworks/technologies used
   1. [Auto Markdown TOC](https://open-vsx.org/extension/huntertran/auto-markdown-toc) - Generate TOC (table of contents) of headlines from parsed markdown file.
+  2. [Miniwebtool -Django Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/) - Generates secure random secret keys for Django web applications.
 
 
 # Skeleton
@@ -77,7 +78,9 @@ Briefly describe your project and its purpose.
 - how to add new features or endpoints to the backend.
 
 ### Technologies, libraries, and frameworks
-
+1. [Django 4.2.5](https://pypi.org/project/Django/) - A high-level Python web framework that encourages rapid development and clean, pragmatic design.
+2. [django-cloudinary-storage 0.3.0](https://pypi.org/project/django-cloudinary-storage/) - Django package that provides Cloudinary storages for both media and static files as well as management commands for removing unnecessary files.
+3. [Pillow 10.0.1](https://pypi.org/project/Pillow/) - Adds image processing capabilities to your Python interpreter.
 
 ### Database
 
