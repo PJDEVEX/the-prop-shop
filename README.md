@@ -58,8 +58,9 @@ Briefly describe your project and its purpose.
 - Arrangement of the frontend and backend within the same repository
 
 ## Frameworks/technologies used
-  1. [Auto Markdown TOC](https://open-vsx.org/extension/huntertran/auto-markdown-toc) - Generate TOC (table of contents) of headlines from parsed markdown file.
-  2. [Miniwebtool -Django Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/) - Generates secure random secret keys for Django web applications.
+  1. [![Auto Markdown TOC](https://img.shields.io/badge/Auto_Markdown_TOC-v3.0.12-blue?logoColor=white)](https://open-vsx.org/extension/huntertran/auto-markdown-toc) - Generate TOC (table of contents) of headlines from parsed markdown file.
+  2. [![Miniwebtool - Django Secret Key Generator](https://img.shields.io/badge/Miniwebtool-Django_Secret_Key_Generator-54c247)](https://miniwebtool.com/django-secret-key-generator/) - Generates secure random secret keys for Django web applications.
+  3. 
 
 
 # Skeleton
@@ -78,9 +79,9 @@ Briefly describe your project and its purpose.
 - how to add new features or endpoints to the backend.
 
 ### Technologies, libraries, and frameworks
-1. [Django 4.2.5](https://pypi.org/project/Django/) - A high-level Python web framework that encourages rapid development and clean, pragmatic design.
-2. [django-cloudinary-storage 0.3.0](https://pypi.org/project/django-cloudinary-storage/) - Django package that provides Cloudinary storages for both media and static files as well as management commands for removing unnecessary files.
-3. [Pillow 10.0.1](https://pypi.org/project/Pillow/) - Adds image processing capabilities to your Python interpreter.
+1. [![Django 4.2.5](https://img.shields.io/badge/Django-4.2.5-092E20?logo=django)](https://pypi.org/project/Django/) - A high-level Python web framework that encourages rapid development and clean, pragmatic design.
+2. [![django-cloudinary-storage 0.3.0](https://img.shields.io/badge/django--cloudinary--storage-0.3.0-2C3E50?logo=django)](https://pypi.org/project/django-cloudinary-storage/) - Django package that provides Cloudinary storages for both media and static files as well as management commands for removing unnecessary files.
+3. [![Pillow 10.0.1](https://img.shields.io/badge/Pillow-10.0.1-blue?logo=pillow)](https://pypi.org/project/Pillow/) - Adds image processing capabilities to your Python interpreter.
 
 ### Database
 
