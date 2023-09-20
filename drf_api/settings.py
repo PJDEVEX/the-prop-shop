@@ -65,7 +65,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'the_prop_shop.urls'
+ROOT_URLCONF = 'drf_api.urls'
 
 TEMPLATES = [
     {
@@ -83,7 +83,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'the_prop_shop.wsgi.application'
+WSGI_APPLICATION = 'drf_api.wsgi.application'
 
 
 # Database
