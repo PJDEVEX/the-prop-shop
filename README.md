@@ -62,6 +62,11 @@ Briefly describe your project and its purpose.
   2. [![Miniwebtool - Django Secret Key Generator](https://img.shields.io/badge/Miniwebtool-Django_Secret_Key_Generator-54c247)](https://miniwebtool.com/django-secret-key-generator/) - Generates secure random secret keys for Django web applications.
   3. 
 
+| No. | Library/ dependacy                                                                                                        | Description                                                                                                     |
+|----|---------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
+| 1.  | [![Auto Markdown TOC](https://img.shields.io/badge/Auto_Markdown_TOC-v3.0.12-blue?logoColor=white)](https://open-vsx.org/extension/huntertran/auto-markdown-toc) | Generate TOC (table of contents) of headlines from parsed markdown file.                                      |
+| 2.  | [![Miniwebtool - Django Secret Key Generator](https://img.shields.io/badge/Miniwebtool-Django_Secret_Key_Generator-54c247)](https://miniwebtool.com/django-secret-key-generator/) | Generates secure random secret keys for Django web applications.                                              |
+
 
 # Skeleton
 
@@ -80,8 +85,21 @@ Briefly describe your project and its purpose.
 
 ### Technologies, libraries, and frameworks
 1. [![Django 4.2.5](https://img.shields.io/badge/Django-4.2.5-092E20?logo=django)](https://pypi.org/project/Django/) - A high-level Python web framework that encourages rapid development and clean, pragmatic design.
+
 2. [![django-cloudinary-storage 0.3.0](https://img.shields.io/badge/django--cloudinary--storage-0.3.0-2C3E50?logo=django)](https://pypi.org/project/django-cloudinary-storage/) - Django package that provides Cloudinary storages for both media and static files as well as management commands for removing unnecessary files.
+
 3. [![Pillow 10.0.1](https://img.shields.io/badge/Pillow-10.0.1-blue?logo=pillow)](https://pypi.org/project/Pillow/) - Adds image processing capabilities to your Python interpreter.
+
+4. [![asgiref 3.7.2](https://img.shields.io/badge/asgiref-3.7.2-BC7D29)](https://pypi.org/project/asgiref/) - ASGI framework, often used in Django applications.
+
+5. [![backports.zoneinfo 0.2.1](https://img.shields.io/badge/backports.zoneinfo-0.2.1-0088CC)](https://pypi.org/project/backports.zoneinfo/) - Backports of Python zoneinfo module for working with time zones.
+
+6. [![cloudinary 1.34.0](https://img.shields.io/badge/cloudinary-1.34.0-FF8800)](https://pypi.org/project/cloudinary/) - Python SDK for Cloudinary, a cloud-based image and video management platform.
+
+7. [![sqlparse 0.4.4](https://img.shields.io/badge/sqlparse-0.4.4-1A4E8B)](https://pypi.org/project/sqlparse/) - SQL parsing and formatting library for Python.
+
+8. [![urllib3 1.26.16](https://img.shields.io/badge/urllib3-1.26.16-0055FF)](https://pypi.org/project/urllib3/) - HTTP library for Python, used for making HTTP requests.
+
 
 ### Database
 

@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     # Third-Party Apps
     'cloudinary_storage',
-    'django.contrib.staticfiles', # this is a built-in app
+    'django.contrib.staticfiles',  # this is a built-in app
     'cloudinary',
 
     # Custom Apps
