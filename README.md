@@ -25,6 +25,8 @@ Briefly describe your project and its purpose.
     - [Libraries](#libraries)
     - [Enhanced User Experience with React](#enhanced-user-experience-with-react)
     - [Color mood](#color-mood)
+    - [Code Quality and Consistency](#code-quality-and-consistency)
+    - [Code Linters](#code-linters)
 - [Getting Started](#getting-started)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -154,6 +156,7 @@ The filter and search functionality allows users to search for properties based 
 
 ### Backend Testing
 
+
 # Surface
 
 Discuss the user interface (UI) and user experience (UX) aspects of the project. Highlight the design principles, styles, and libraries used for creating the frontend while shareing screenshots and wireframes to give a visual sense of the project's appearance.
@@ -194,6 +197,22 @@ how the use of a React library and/or implemented feature has contributed to imp
 
 
 ### Color mood
+
+### Code Quality and Consistency
+
+### Code Linters
+
+- **Linters**: Tools for maintaining code quality and PEP 8 compliance in your Django project.
+
+| No. | Linter Badge | CLI Command |
+|----|--------------|---------------------------|
+| 1  | [![Flake8 Badge](https://img.shields.io/badge/Flake8-6.1.0-<COLOR>)](https://pypi.org/project/flake8-django/)  | Test: `pytest`<br>Coverage report: `pytest --cov=.` |
+| 2  | [![Autopep8 Badge](https://img.shields.io/badge/Autopep8-2.0.4-<COLOR>)](https://pypi.org/project/autopep8/) | `autopep8 <python_file_name>.py --in-place` |
+| 3  | [![Pylint Badge](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint) |  |
+| 4  | [![Black Badge](https://img.shields.io/badge/Black-23.9.1-<COLOR>)](https://pypi.org/project/black/)     | Get started right away with sensible defaults: `black {source_file_or_directory}` <br> Run Black as a package if running it as a script doesn't work: `python -m black {source_file_or_directory}` |
+
+
+
 
 
 # Getting Started
