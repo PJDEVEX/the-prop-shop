@@ -34,7 +34,14 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu104.gitpod.io"]
+ALLOWED_HOSTS = [
+    os.environ.get("ALLOWED_HOSTS"),
+    "localhost",
+    ]
+
+CLIENT_ALLOWED_ORIGIN = [
+    os.environ.get("CLIENT_ORIGIN ")
+]
 
 
 # Application definition
