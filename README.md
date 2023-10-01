@@ -33,6 +33,7 @@ Briefly describe your project and its purpose.
 - [Deployment](#deployment)
 - [Benchmarking](#benchmarking)
 - [References](#references)
+    - [Tools used](#tools-used)
 
 <!-- /TOC -->
 
@@ -245,4 +246,11 @@ By evaluating and comparing the features, performance, and user experience of La
 
 1. [Markdown Tips & Tricks 2022 - Markdown Crash Course](https://www.youtube.com/watch?v=ftOBvusMHjQ)
 2. 
+
+### Tools used
+
+| No. | Name                                       | Purpose                                    |
+|----|--------------------------------------------|--------------------------------------------|
+| 1  | [Shields.io](https://shields.io/badges)  | Create badges. |
+| 2  | [Simple Icons](https://simpleicons.org/) | Find and download SVG icons for various brands and products. |
 
