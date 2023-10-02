@@ -35,13 +35,11 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    os.environ.get('ALLOWED_HOSTS'),
-    'localhost',
-    ]
-
-CLIENT_ALLOWED_ORIGIN = [
-    os.environ.get("CLIENT_ORIGIN ")
+    os.environ.get("ALLOWED_HOSTS"),
+    "localhost",
 ]
+
+CLIENT_ALLOWED_ORIGIN = [os.environ.get("CLIENT_ORIGIN ")]
 
 INSTALLED_APPS = [
     # Django Built-in Apps
@@ -56,22 +54,30 @@ INSTALLED_APPS = [
     "cloudinary",
     "rest_framework",
     # Project Apps
+    "accounts",
 ]
 
 SITE_ID = 1
 
 # SimpleJWT
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [( 
-        'rest_framework.authentication.SessionAuthentication' 
-        if 'DEV' in os.environ 
-        else 'dj_rest_auth.jwt_auth.JWTCookieAuthentication'
-    )]
-    }
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        (
+            "rest_framework.authentication.SessionAuthentication"
+            if "DEV" in os.environ
+            else "dj_rest_auth.jwt_auth.JWTCookieAuthentication"
+        )
+    ],
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+    "PAGE_SIZE": 10,
+    # Format date and time
+    # https://docs.python.org/3/library/time.html#time.strftime
+    "DATETIME_FORMAT": "%d %b %Y",
+}
 REST_USE_JWT = True
-JWT_AUTH_COOKIE = 'my-app-auth'
+JWT_AUTH_COOKIE = "my-app-auth"
 JWT_AUTH_SECURE = True
-JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
+JWT_AUTH_REFRESH_COOKIE = "my-refresh-token"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -89,7 +95,7 @@ ROOT_URLCONF = "drf_api.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, 'staticfiles', 'build')],
+        "DIRS": [os.path.join(BASE_DIR, "staticfiles", "build")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -108,17 +114,15 @@ WSGI_APPLICATION = "drf_api.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 # Databases for dev:SQLite and production: PostgresSQL
-if 'DEV' in os.environ:
+if "DEV" in os.environ:
     DATABASES = {
-         'default': {
-             'ENGINE': 'django.db.backends.sqlite3',
-             'NAME': BASE_DIR / 'db.sqlite3',
-         }
-     }
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
 else:
-    DATABASES = {
-         'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-     }
+    DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -156,8 +160,8 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-WHITENOISE_ROOT = BASE_DIR / 'staticfiles' / 'build'
+STATIC_ROOT = BASE_DIR / "staticfiles"
+WHITENOISE_ROOT = BASE_DIR / "staticfiles" / "build"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
