@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",  # this is a built-in app
     "cloudinary",
     "rest_framework",
+    "rest_framework.authtoken",
+    "dj_rest_auth",
     # Project Apps
     "accounts",
 ]
@@ -124,6 +126,7 @@ if "DEV" in os.environ:
 else:
     DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
 
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -175,3 +178,5 @@ MEDIA_URL = "/media/"
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 FILE_UPLOAD_PERMISSIONS = 0o640
+
+AUTH_USER_MODEL = "accounts.UserAccount"
