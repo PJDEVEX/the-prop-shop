@@ -110,7 +110,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "the_prop_shop.wsgi.application"
+WSGI_APPLICATION = "the-prop-shop.wsgi.application"
 
 
 # Database
