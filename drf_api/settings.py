@@ -110,7 +110,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "drf_api.wsgi.application"
+WSGI_APPLICATION = "the_prop_shop.wsgi.application"
 
 
 # Database
