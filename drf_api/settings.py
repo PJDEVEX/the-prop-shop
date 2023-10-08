@@ -38,6 +38,7 @@ DEBUG = "DEBUG" in os.environ
 
 ALLOWED_HOSTS = [
     os.environ.get("ALLOWED_HOSTS"),
+    "8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu105.gitpod.io",
 ]
 
 CLIENT_ALLOWED_ORIGIN = [os.environ.get("CLIENT_ORIGIN ")]
