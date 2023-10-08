@@ -1,4 +1,15 @@
 
+- **Linters**: Tools for maintaining code quality and PEP 8 compliance in your Django project.
+
+| No. | Linter Badge | CLI Command |
+|----|--------------|---------------------------|
+| 1  | [![Flake8 Badge](https://img.shields.io/badge/Flake8-6.1.0-<COLOR>)](https://pypi.org/project/flake8-django/)  | Test: `pytest`<br>Coverage report: `pytest --cov=.` |
+| 2  | [![Autopep8 Badge](https://img.shields.io/badge/Autopep8-2.0.4-<COLOR>)](https://pypi.org/project/autopep8/) | `autopep8 <python_file_name>.py --in-place` |
+| 3  | [![Pylint Badge](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint) |  |
+| 4   | [![Black Badge](https://img.shields.io/badge/Black-23.9.1-<COLOR>)](https://pypi.org/project/black/) | `python -m black -l 70 {source_file_or_directory}` |
+
+
+
 ## Backend Testing
 
 ### Database Configuration Testing
@@ -148,3 +159,7 @@ We have used Postman for seamless API testing.
 
     5. [**Screenshot**](https://res.cloudinary.com/pjdevex/image/upload/v1696371672/thepropshop/testing/successful-user-creation_tkacyr.png)
 
+
+#### References
+1. [Python Auto Formatter: Autopep8 vs. Black (and some practical tips)](https://medium.com/mlearning-ai/python-auto-formatter-autopep8-vs-black-and-some-practical-tips-e71adb24aee1)
+2. [PEP8](https://peps.python.org/pep-0008/)

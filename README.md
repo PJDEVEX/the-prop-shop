@@ -103,7 +103,10 @@ Briefly describe your project and its purpose.
 | 12 | [![pathspec 0.11.2](https://img.shields.io/badge/pathspec-0.11.2-339933)](https://pypi.org/project/pathspec/) | Utility library for gitignore style pattern matching of file paths. |
 | 13 | [![pyenchant 3.2.2](https://img.shields.io/badge/pyenchant-3.2.2-FF5500)](https://pypi.org/project/pyenchant/) | A spellchecking library for Python. |
 
-
+whitenoise - https://pypi.org/project/whitenoise/ 
+djangorestframework-simplejwt - https://pypi.org/project/djangorestframework-simplejwt/
+dj-rest-auth 5.0.1 - https://pypi.org/project/dj-rest-auth/
+drf-social-oauth2 2.1.3 - https://drf-social-oauth2.readthedocs.io/en/latest/ - the main library which enables us oauth2 token based authentication for email password as well as google and facebook
 
 ### Database
 
@@ -204,14 +207,6 @@ how the use of a React library and/or implemented feature has contributed to imp
 
 ### Code Linters
 
-- **Linters**: Tools for maintaining code quality and PEP 8 compliance in your Django project.
-
-| No. | Linter Badge | CLI Command |
-|----|--------------|---------------------------|
-| 1  | [![Flake8 Badge](https://img.shields.io/badge/Flake8-6.1.0-<COLOR>)](https://pypi.org/project/flake8-django/)  | Test: `pytest`<br>Coverage report: `pytest --cov=.` |
-| 2  | [![Autopep8 Badge](https://img.shields.io/badge/Autopep8-2.0.4-<COLOR>)](https://pypi.org/project/autopep8/) | `autopep8 <python_file_name>.py --in-place` |
-| 3  | [![Pylint Badge](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint) |  |
-| 4  | [![Black Badge](https://img.shields.io/badge/Black-23.9.1-<COLOR>)](https://pypi.org/project/black/)     | Get started right away with sensible defaults: `black {source_file_or_directory}` <br> Run Black as a package if running it as a script doesn't work: `python -m black {source_file_or_directory}` |
 
 
 
@@ -246,7 +241,8 @@ By evaluating and comparing the features, performance, and user experience of La
 # References
 
 1. [Markdown Tips & Tricks 2022 - Markdown Crash Course](https://www.youtube.com/watch?v=ftOBvusMHjQ)
-2. 
+2. [Adding Social Authentication to Django](https://testdriven.io/blog/django-social-auth/)
+3. [Email + Social Logins in Django – Step by Step Guide](https://www.geeksforgeeks.org/email-social-logins-in-django-step-by-step-guide/)
 
 ### Tools used
 
