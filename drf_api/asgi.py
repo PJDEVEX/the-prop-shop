@@ -1,5 +1,5 @@
 """
-ASGI config for the_prop_shop project.
+ASGI config for drf_api project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
