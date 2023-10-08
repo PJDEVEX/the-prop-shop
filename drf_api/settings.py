@@ -38,7 +38,6 @@ DEBUG = "DEBUG" in os.environ
 
 ALLOWED_HOSTS = [
     os.environ.get("ALLOWED_HOSTS"),
-    "localhost",
 ]
 
 CLIENT_ALLOWED_ORIGIN = [os.environ.get("CLIENT_ORIGIN ")]
@@ -55,6 +54,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",  # this is a built-in app
     "cloudinary",
     "rest_framework",
+    "dj_rest_auth",
     "rest_framework.authtoken",
     "oauth2_provider",
     "social_django",
@@ -124,7 +124,7 @@ WSGI_APPLICATION = "drf_api.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 # Databases for dev:SQLite and production: PostgresSQL
-if "DEV" in os.environ:
+if "DEBUG" in os.environ:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
@@ -137,6 +137,7 @@ else:
             os.environ.get("DATABASE_URL")
         )
     }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -156,6 +157,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = "accounts.Account"
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
@@ -191,5 +193,3 @@ DEFAULT_FILE_STORAGE = (
 )
 
 FILE_UPLOAD_PERMISSIONS = 0o640
-
-AUTH_USER_MODEL = "accounts.Account"
