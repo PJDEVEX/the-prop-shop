@@ -22,6 +22,9 @@ CLOUDINARY_STORAGE = {
     "CLOUDINARY_URL": os.environ.get("CLOUDINARY_URL")
 }
 
+CORS_ALLOWED_ORIGINS = [
+    os.environ.get("CLIENT_ORIGIN")
+]
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -36,12 +39,6 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = "DEBUG" in os.environ
 
-ALLOWED_HOSTS = [
-    os.environ.get("ALLOWED_HOSTS"),
-    "8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu105.gitpod.io",
-]
-
-CLIENT_ALLOWED_ORIGIN = [os.environ.get("CLIENT_ORIGIN ")]
 
 INSTALLED_APPS = [
     # Django Built-in Apps
@@ -60,6 +57,7 @@ INSTALLED_APPS = [
     "oauth2_provider",
     "social_django",
     "drf_social_oauth2",
+    "corsheaders",
     # Project Apps
     "accounts",
 ]
@@ -73,7 +71,7 @@ AUTHENTICATION_BACKENDS = (
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework.authentication.SessionAuthentication"
-        if "DEV" in os.environ
+        if "DEBUG" in os.environ
         else "oauth2_provider.contrib.rest_framework.OAuth2Authentication",
         "drf_social_oauth2.authentication.SocialAuthentication",
     ],
@@ -83,12 +81,14 @@ REST_FRAMEWORK = {
     # https://docs.python.org/3/library/time.html#time.strftime
     "DATETIME_FORMAT": "%d %b %Y",
 }
+
 # REST_USE_JWT = True
 # JWT_AUTH_COOKIE = "my-app-auth"
 # JWT_AUTH_SECURE = True
 # JWT_AUTH_REFRESH_COOKIE = "my-refresh-token"
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -100,6 +100,18 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "drf_api.urls"
+
+ALLOWED_HOSTS = [
+    os.environ.get("ALLOWED_HOSTS"),
+    "8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu105.gitpod.io",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu105.gitpod.io"
+]
+
+CLIENT_ALLOWED_ORIGIN = [os.environ.get("CLIENT_ORIGIN ")]
+
 
 TEMPLATES = [
     {
@@ -124,7 +136,7 @@ WSGI_APPLICATION = "drf_api.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-# Databases for dev:SQLite and production: PostgresSQL
+# Databases for DEBUG=1:SQLite and production: PostgresSQL
 if "DEBUG" in os.environ:
     DATABASES = {
         "default": {
