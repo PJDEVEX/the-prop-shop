@@ -1,17 +1,18 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.views.generic import TemplateView
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from django.conf import settings
 from accounts import urls as accounts_urls
 
 urlpatterns = [
-    path("api-auth", include("rest_framework.urls")),
-    path("api/token/", TokenObtainPairView.as_view, name="token_obtain_pair"),
-    path("api/token/refresh/", TokenRefreshView.as_view, name="token_refresh"),
-    path("api/accounts/", include("accounts.urls")),
-    # path("", TemplateView.as_view(template_name="index.html")),
+    # Admin panel
     path("admin/", admin.site.urls),
+    # Django Rest Framework auth
+    path("api-auth/", include("rest_framework.urls")),
+    # Uncomment the line below if you want to include a custom HTML template
+    # path("", TemplateView.as_view(template_name="index.html")),
+    # Social auth - drf_social_oauth2
+    re_path("api-auth/", include('drf_social_oauth2.urls', namespace='drf')),
+    # Accounts views
+    path("api-auth/", include("accounts.urls")),
 ]
-
-# handle404 = TemplateView.as_view(template_name="index.html")
