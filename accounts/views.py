@@ -1,52 +1,54 @@
-from django.utils.safestring import mark_safe
-from rest_framework.response import Response
+from django.shortcuts import render
 from rest_framework.views import APIView
+from rest_framework import status, generics
+from rest_framework.response import Response
+from .serializers import RegistrationSerializer, UsersSerializer
 from rest_framework import permissions
-from django.contrib.auth import get_user_model
-import re
-
-User = get_user_model()
+from .models import Account
 
 
-class SignupView(APIView):
+class CreateAccount(APIView):
     """
-    API view for user registration and account creation.
+    API endpoint for user registration.
     """
 
-    permission_classes = (permissions.AllowAny,)
+    permission_classes = [permissions.AllowAny]
 
-    def post(self, request, format=None):
+    def post(self, request):
         """
-        Handles POST requests for user registration.
+        Create a new user account.
         """
-        data = self.request.data
-
-        name = data["name"]
-        email = data["email"]
-        password = data["password"]
-        password2 = data["password2"]
-
-        # Password validation regex pattern
-        password_pattern = (
-            r"^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$"
+        reg_serializer = RegistrationSerializer(data=request.data)
+        if reg_serializer.is_valid():
+            new_user = reg_serializer.save()
+            if new_user:
+                r = requests.post(
+                    "https://8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu105.gitpod.io/api-auth/token",
+                    data={
+                        "username": new_user.email,
+                        "password": request.data["password"],
+                        "client_id": "Your Client ID",
+                        "client_secret": "Your Client Secret",
+                        "grant_type": "password",
+                    },
+                )
+                return Response(
+                    r.json(), status=status.HTTP_201_CREATED
+                )
+        return Response(
+            reg_serializer.errors, status=status.HTTP_400_BAD_REQUEST
         )
 
-        if password == password2:
-            if User.objects.filter(email=email).exists():
-                error_message = "Email already exists"
-                return Response({"error": error_message})
-            else:
-                if not re.match(password_pattern, password):
-                    error_message = "Password must contain at least 6 characters, including at least one letter, one digit, and one special character (@$!%*#?&)."
-                    return Response({"error": mark_safe(error_message)})
-                else:
-                    user = User.objects.create_user(
-                        email=email, password=password, name=name
-                    )
 
-                    user.save()
-                    return Response(
-                        {"success": "Congratulations! User created successfully"}
-                    )
-        else:
-            return Response({"error": "Passwords do not match"})
+class AllUsers(generics.ListAPIView):
+    permission_classes = [permissions.AllowAny]
+    queryset = Account.objects.all()
+    serializer_class = UsersSerializer
+
+
+class CurrentUser(APIView):
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def get(self, request):
+        serializer = UsersSerializer(self.request.user)
+        return Response(serializer.data)
