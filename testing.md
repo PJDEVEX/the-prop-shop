@@ -163,3 +163,4 @@ We have used Postman for seamless API testing.
 #### References
 1. [Python Auto Formatter: Autopep8 vs. Black (and some practical tips)](https://medium.com/mlearning-ai/python-auto-formatter-autopep8-vs-black-and-some-practical-tips-e71adb24aee1)
 2. [PEP8](https://peps.python.org/pep-0008/)
+3. [I am getting "error": "invalid_client" on social_oauth2 when I try to get the tokens through Postman for DjangoOauth](https://stackoverflow.com/questions/74127295/i-am-getting-error-invalid-client-on-social-oauth2-when-i-try-to-get-the-to)

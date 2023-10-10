@@ -107,6 +107,7 @@ whitenoise - https://pypi.org/project/whitenoise/
 djangorestframework-simplejwt - https://pypi.org/project/djangorestframework-simplejwt/
 dj-rest-auth 5.0.1 - https://pypi.org/project/dj-rest-auth/
 drf-social-oauth2 2.1.3 - https://drf-social-oauth2.readthedocs.io/en/latest/ - the main library which enables us oauth2 token based authentication for email password as well as google and facebook
+coverage==7.3.2 - https://coverage.readthedocs.io/en/7.3.2/ - Coverage.py is a tool for measuring code coverage of Python programs.
 
 ### Database
 
@@ -243,6 +244,8 @@ By evaluating and comparing the features, performance, and user experience of La
 1. [Markdown Tips & Tricks 2022 - Markdown Crash Course](https://www.youtube.com/watch?v=ftOBvusMHjQ)
 2. [Adding Social Authentication to Django](https://testdriven.io/blog/django-social-auth/)
 3. [Email + Social Logins in Django – Step by Step Guide](https://www.geeksforgeeks.org/email-social-logins-in-django-step-by-step-guide/)
+4. [Create New App In Facebook Developers Account Create App ID and App Secret Key In Facebook Developer](https://youtu.be/2XVmmXKJGVg?si=XDUmDDKjHqU7MbIA)
+5. [How To Change Youtube Channel Name And Channel Handle](https://www.youtube.com/watch?v=FAQR9sNkA3I&t=2s)
 
 ### Tools used
 
