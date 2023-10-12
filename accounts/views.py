@@ -2,7 +2,11 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework import status, generics
 from rest_framework.response import Response
-from .serializers import RegistrationSerializer, UsersSerializer, UserDetailSerializer
+from .serializers import (
+    RegistrationSerializer,
+    UsersSerializer,
+    UserDetailSerializer,
+)
 from rest_framework import permissions
 from .models import Account
 
@@ -44,6 +48,7 @@ class AllUsers(generics.ListAPIView):
     """
     API endpoint to retrieve a list of all users.
     """
+
     permission_classes = [permissions.AllowAny]
     queryset = Account.objects.all()
     serializer_class = UsersSerializer
@@ -53,6 +58,7 @@ class CurrentUser(APIView):
     """
     API endpoint to retrieve infor about the currently authenticated user.
     """
+
     permission_classes = (permissions.IsAuthenticated,)
 
     def get(self, request):
@@ -69,6 +75,7 @@ class UserDetail(APIView):
     """
     API endpoint to retrieve detailed information about a user.
     """
+
     permission_classes = [permissions.AllowAny]
 
     def get(self, request, user_id):
@@ -79,5 +86,5 @@ class UserDetail(APIView):
         except Account.DoesNotExist:
             return Response(
                 {"error": "User not found"},
-                status=status.HTTP_404_NOT_FOUND
+                status=status.HTTP_404_NOT_FOUND,
             )

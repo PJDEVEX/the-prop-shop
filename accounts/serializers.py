@@ -52,6 +52,7 @@ class UserDetailSerializer(serializers.ModelSerializer):
     """
     Retrieving detailed user information.
     """
+
     class Meta:
         model = Account
         fields = (
