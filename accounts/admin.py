@@ -8,5 +8,6 @@ class AccountAdmin(admin.ModelAdmin):
     search_fields = ('email', 'username', 'first_name', 'last_name')
     ordering = ('email',)
 
+
 # Register the Account model with the custom admin class
 admin.site.register(Account, AccountAdmin)

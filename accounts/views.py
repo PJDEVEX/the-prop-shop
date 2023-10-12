@@ -41,14 +41,25 @@ class CreateAccount(APIView):
 
 
 class AllUsers(generics.ListAPIView):
+    """
+    API endpoint to retrieve a list of all users.
+    """
     permission_classes = [permissions.AllowAny]
     queryset = Account.objects.all()
     serializer_class = UsersSerializer
 
 
 class CurrentUser(APIView):
+    """
+    API endpoint to retrieve information about the currently authenticated user.
+    """
     permission_classes = (permissions.IsAuthenticated,)
 
     def get(self, request):
-        serializer = UsersSerializer(self.request.user)
+        """
+        Retrieve user information for the currently authenticated user.
+        """
+        serializer = UsersSerializer(
+            self.request.user, context={"request": request}
+        )
         return Response(serializer.data)

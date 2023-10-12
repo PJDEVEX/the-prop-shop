@@ -59,16 +59,26 @@ class Account(AbstractBaseUser, PermissionsMixin):
     """
 
     email = models.EmailField(unique=True)
-    username = models.CharField(_("User Name"), max_length=150)
+    username = models.CharField(_("Owner"), max_length=150)
     first_name = models.CharField(_("First Name"), max_length=150)
     last_name = models.CharField(_("Last Name"), max_length=150)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    image = models.ImageField(
+        upload_to="images/",
+        default="../default_profile_gj2yan.jpg",
+        blank=True,
+    )
 
     objects = CustomAccountManager()
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["username", "first_name"]
+
+    class Meta:
+        ordering = ["-created_at"]
 
     def __str__(self):
         """

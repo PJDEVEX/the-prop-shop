@@ -3,15 +3,34 @@ from .models import Account
 
 
 class UsersSerializer(serializers.ModelSerializer):
+    is_current_user = serializers.SerializerMethodField()
+
+    def get_is_current_user(self, obj):
+        """
+        Check if the current user is the same as the serialized user
+        """
+        request = self.context["request"]
+        return request.user == obj
+
     class Meta:
         model = Account
-        fields = ('email', 'username', 'first_name')
+        fields = (
+            "email",
+            "username",
+            "first_name",
+            "last_name",
+            "created_at",
+            "updated_at",
+            "image",
+            "is_current_user",
+        )
 
 
 class RegistrationSerializer(serializers.ModelSerializer):
     """
     Serializer for user registration.
     """
+
     class Meta:
         model = Account
         fields = ("email", "username", "password", "first_name")
