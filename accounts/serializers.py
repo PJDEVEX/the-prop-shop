@@ -46,3 +46,20 @@ class RegistrationSerializer(serializers.ModelSerializer):
             instance.set_password(password)
         instance.save()
         return instance
+
+
+class UserDetailSerializer(serializers.ModelSerializer):
+    """
+    Retrieving detailed user information.
+    """
+    class Meta:
+        model = Account
+        fields = (
+            "email",
+            "username",
+            "first_name",
+            "last_name",
+            "created_at",
+            "updated_at",
+            "image",
+        )

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework import status, generics
 from rest_framework.response import Response
-from .serializers import RegistrationSerializer, UsersSerializer
+from .serializers import RegistrationSerializer, UsersSerializer, UserDetailSerializer
 from rest_framework import permissions
 from .models import Account
 
@@ -63,3 +63,21 @@ class CurrentUser(APIView):
             self.request.user, context={"request": request}
         )
         return Response(serializer.data)
+
+
+class UserDetail(APIView):
+    """
+    API endpoint to retrieve detailed information about a user.
+    """
+    permission_classes = [permissions.AllowAny]
+
+    def get(self, request, user_id):
+        try:
+            user = Account.objects.get(id=user_id)
+            serializer = UserDetailSerializer(user)
+            return Response(serializer.data)
+        except Account.DoesNotExist:
+            return Response(
+                {"error": "User not found"},
+                status=status.HTTP_404_NOT_FOUND
+            )
