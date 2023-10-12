@@ -3,6 +3,9 @@ from .models import Account
 
 
 class AccountAdmin(admin.ModelAdmin):
+    """
+    Custom admin options for the Account model.
+    """
     list_display = (
         "email",
         "username",
