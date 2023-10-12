@@ -51,7 +51,7 @@ class AllUsers(generics.ListAPIView):
 
 class CurrentUser(APIView):
     """
-    API endpoint to retrieve information about the currently authenticated user.
+    API endpoint to retrieve infor about the currently authenticated user.
     """
     permission_classes = (permissions.IsAuthenticated,)
 
