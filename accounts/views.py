@@ -2,6 +2,8 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework import status, generics
 from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
+from drf_api.permissions import IsOwnerOrReadOnly
 from .serializers import (
     RegistrationSerializer,
     UsersSerializer,
@@ -71,20 +73,11 @@ class CurrentUser(APIView):
         return Response(serializer.data)
 
 
-class UserDetail(APIView):
+class UserDetail(generics.RetrieveUpdateAPIView):
     """
-    API endpoint to retrieve detailed information about a user.
+    Retrieve and update the details of the account if you are the owner.
     """
 
-    permission_classes = [permissions.AllowAny]
-
-    def get(self, request, user_id):
-        try:
-            user = Account.objects.get(id=user_id)
-            serializer = UserDetailSerializer(user)
-            return Response(serializer.data)
-        except Account.DoesNotExist:
-            return Response(
-                {"error": "User not found"},
-                status=status.HTTP_404_NOT_FOUND,
-            )
+    queryset = Account.objects.all()
+    serializer_class = UserDetailSerializer
+    permission_classes = [IsOwnerOrReadOnly]
