@@ -121,7 +121,6 @@ REST_FRAMEWORK = {
 # JWT_AUTH_REFRESH_COOKIE = "my-refresh-token"
 
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -130,14 +129,13 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
 ]
 
 ROOT_URLCONF = "drf_api.urls"
 
-ALLOWED_HOSTS = [
-    os.environ.get("ALLOWED_HOSTS"),
-    "8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu105.gitpod.io",
-]
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(',')
 
 CSRF_TRUSTED_ORIGINS = [
     "https://8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu105.gitpod.io"
