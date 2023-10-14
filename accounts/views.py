@@ -97,9 +97,7 @@ class AllUsers(generics.ListAPIView):
 
 class CurrentUser(APIView):
     """
-    API endpoint to retrieve information about the currently authenticated user.
-
-    This view retrieves information about the user who is currently authenticated.
+    API endpoint to retrieve info about the currently authenticated user.
 
     Permission Classes:
     - IsAuthenticated: Requires authentication for access.
@@ -130,23 +128,44 @@ class CurrentUser(APIView):
 
 class UserDetail(generics.RetrieveUpdateAPIView):
     """
-    Retrieve and update the details of the account if you are the owner.
+    Retrieve and update the details of a user account if you are the owner.
 
-    This view allows users to retrieve and update their own account details.
+    The view allows authenticated users to retrieve and update account details.
+    Users are only authorized to access and modify their own account info.
 
     Permission Classes:
-    - IsOwnerOrReadOnly: Allows the owner of the account to access and update details.
+    - IsOwnerOrReadOnly: Only the owner of the account can update details.
 
     HTTP Methods:
-    - GET: Retrieve user details.
-    - PUT/PATCH: Update user details.
+    - GET: Retrieve the user's account details.
+    - PUT/PATCH: Update the user's account details.
 
-    Response:
-    - Returns user information.
-    - If authorized, allows updates to user information.
+    Successful Response (HTTP 200):
+    - Returns a JSON object containing the user's account information.
+
+    Error Responses:
+    - HTTP 404 (Not Found): If the requested user's account does not exist.
+    - HTTP 500 (Internal Server Error): For unexpected server errors.
 
     """
 
     queryset = Account.objects.all()
     serializer_class = UserDetailSerializer
     permission_classes = [IsOwnerOrReadOnly]
+
+    def get(self, request, *args, **kwargs):
+        try:
+            instance = self.get_object()
+            serializer = self.get_serializer(instance)
+            return Response(serializer.data)
+        except Account.DoesNotExist:
+            return Response(
+                {"error": "User not found"},
+                status=status.HTTP_404_NOT_FOUND,
+            )
+        except Exception as e:
+            # Handle unexpected exceptions, return a custom error response
+            return Response(
+                {"error": str(e)},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            )
