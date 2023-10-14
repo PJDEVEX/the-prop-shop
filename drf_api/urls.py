@@ -14,5 +14,5 @@ urlpatterns = [
     # Custom HTML template
     #  path("", TemplateView.as_view(template_name="index.html")),
     # Accounts views
-    path("api-auth/", include("accounts.urls")),
+    path("api/", include("accounts.urls", namespace="users")),
 ]
