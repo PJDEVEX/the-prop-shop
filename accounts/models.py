@@ -29,7 +29,7 @@ class CustomAccountManager(BaseUserManager):
         )
         user.set_password(password)
         user.save()
-        return user
+        return user  # Corrected the indentation here
 
     def create_superuser(
         self, email, username, first_name, password, **other_fields
@@ -41,13 +41,9 @@ class CustomAccountManager(BaseUserManager):
         other_fields.setdefault("is_superuser", True)
         other_fields.setdefault("is_active", True)
         if other_fields.get("is_staff") is not True:
-            raise ValueError(
-                _("Please assign is_staff=True for superuser")
-            )
+            raise ValueError(_("Please assign is_staff=True for superuser"))
         if other_fields.get("is_superuser") is not True:
-            raise ValueError(
-                _("Please assign is_superuser=True for superuser")
-            )
+            raise ValueError(_("Please assign is_superuser=True for superuser"))
         return self.create_user(
             email, username, first_name, password, **other_fields
         )
