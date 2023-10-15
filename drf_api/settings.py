@@ -141,8 +141,7 @@ CSRF_TRUSTED_ORIGINS = [
     "https://8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu105.gitpod.io"
 ]
 
-CLIENT_ALLOWED_ORIGIN = [os.environ.get("CLIENT_ORIGIN ")]
-
+CLIENT_ALLOWED_ORIGIN = [os.environ.get("CLIENT_ORIGIN")]
 
 TEMPLATES = [
     {

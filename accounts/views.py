@@ -1,9 +1,10 @@
 import requests
-from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework import status, generics
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.exceptions import PermissionDenied, NotFound
+from django.shortcuts import get_object_or_404
 from drf_api.permissions import IsOwnerOrReadOnly
 from .serializers import (
     RegistrationSerializer,
@@ -52,22 +53,47 @@ class CreateAccount(APIView):
 
         """
         reg_serializer = RegistrationSerializer(data=request.data)
+
         if reg_serializer.is_valid():
+            # Check if the password is at least 6 characters long
+            if len(request.data["password"]) < 6:
+                return Response(
+                    {
+                        "error": "Password must be at least 6 characters long"
+                    },
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+
             new_user = reg_serializer.save()
             if new_user:
-                r = requests.post(
-                    "https://8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu105.gitpod.io/api-auth/token",
-                    data={
-                        "username": new_user.email,
-                        "password": request.data["password"],
-                        "client_id": "Your Client ID",
-                        "client_secret": "Your Client Secret",
-                        "grant_type": "password",
-                    },
-                )
-                return Response(
-                    r.json(), status=status.HTTP_201_CREATED
-                )
+                try:
+                    # Attempt to obtain an access token
+                    r = requests.post(
+                        "https://8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu105.gitpod.io/api-auth/token",
+                        data={
+                            "username": new_user.email,
+                            "password": request.data["password"],
+                            "client_id": "Your Client ID",
+                            "client_secret": "Your Client Secret",
+                            "grant_type": "password",
+                        },
+                    )
+                    r.raise_for_status()  # Raise an error if not successful
+                    return Response(
+                        r.json(), status=status.HTTP_201_CREATED
+                    )
+                except requests.exceptions.RequestException as e:
+                    return Response(
+                        {
+                            "error": f"External request error: {str(e)}"
+                        },
+                        status=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                    )
+                except ValueError as e:
+                    return Response(
+                        {"error": str(e)},
+                        status=status.HTTP_400_BAD_REQUEST,
+                    )
         return Response(
             reg_serializer.errors, status=status.HTTP_400_BAD_REQUEST
         )
@@ -145,6 +171,7 @@ class UserDetail(generics.RetrieveUpdateAPIView):
 
     Error Responses:
     - HTTP 404 (Not Found): If the requested user's account does not exist.
+    - HTTP 403 (Forbidden): If unauth'd user tries to access user details.
     - HTTP 500 (Internal Server Error): For unexpected server errors.
 
     """
@@ -155,16 +182,50 @@ class UserDetail(generics.RetrieveUpdateAPIView):
 
     def get(self, request, *args, **kwargs):
         try:
-            instance = self.get_object()
+            instance = get_object_or_404(Account, pk=kwargs["pk"])
+            # Check if the requesting user is the owner
+            if request.user != instance:
+                raise PermissionDenied(
+                    "You do not have permission to access this user's details."
+                )
             serializer = self.get_serializer(instance)
             return Response(serializer.data)
         except Account.DoesNotExist:
+            raise NotFound(
+                "User not found"
+            )  # Raise NotFound exception
+        except PermissionDenied as e:
             return Response(
-                {"error": "User not found"},
-                status=status.HTTP_404_NOT_FOUND,
+                {"error": str(e)},
+                status=status.HTTP_403_FORBIDDEN,
             )
         except Exception as e:
-            # Handle unexpected exceptions, return a custom error response
+            return Response(
+                {"error": str(e)},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            )
+
+    def update(self, request, *args, **kwargs):
+        try:
+            instance = get_object_or_404(Account, pk=kwargs["pk"])
+            # Check if the requesting user is the owner
+            if request.user != instance:
+                raise PermissionDenied(
+                    "You do not have permission to update this user's details."
+                )
+            serializer = self.get_serializer(
+                instance, data=request.data, partial=True
+            )
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+            return Response(serializer.data)
+        except Account.DoesNotExist:
+            raise NotFound("User not found")
+        except PermissionDenied as e:
+            return Response(
+                {"error": str(e)}, status=status.HTTP_403_FORBIDDEN
+            )
+        except Exception as e:
             return Response(
                 {"error": str(e)},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR,

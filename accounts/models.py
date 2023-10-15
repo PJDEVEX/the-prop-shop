@@ -41,9 +41,13 @@ class CustomAccountManager(BaseUserManager):
         other_fields.setdefault("is_superuser", True)
         other_fields.setdefault("is_active", True)
         if other_fields.get("is_staff") is not True:
-            raise ValueError(_("Please assign is_staff=True for superuser"))
+            raise ValueError(
+                _("Please assign is_staff=True for superuser")
+            )
         if other_fields.get("is_superuser") is not True:
-            raise ValueError(_("Please assign is_superuser=True for superuser"))
+            raise ValueError(
+                _("Please assign is_superuser=True for superuser")
+            )
         return self.create_user(
             email, username, first_name, password, **other_fields
         )
@@ -75,6 +79,18 @@ class Account(AbstractBaseUser, PermissionsMixin):
 
     class Meta:
         ordering = ["-created_at"]
+
+    def get_full_name(self):
+        """
+        Return the full name of the user.
+        """
+        return f"{self.first_name} {self.last_name}"
+
+    def get_short_name(self):
+        """
+        Return the short name of the user (usually first name).
+        """
+        return self.first_name
 
     def __str__(self):
         """
