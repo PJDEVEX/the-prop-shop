@@ -241,11 +241,13 @@ By evaluating and comparing the features, performance, and user experience of La
 
 # References
 
-1. [Markdown Tips & Tricks 2022 - Markdown Crash Course](https://www.youtube.com/watch?v=ftOBvusMHjQ)
-2. [Adding Social Authentication to Django](https://testdriven.io/blog/django-social-auth/)
-3. [Email + Social Logins in Django – Step by Step Guide](https://www.geeksforgeeks.org/email-social-logins-in-django-step-by-step-guide/)
-4. [Create New App In Facebook Developers Account Create App ID and App Secret Key In Facebook Developer](https://youtu.be/2XVmmXKJGVg?si=XDUmDDKjHqU7MbIA)
-5. [How To Change Youtube Channel Name And Channel Handle](https://www.youtube.com/watch?v=FAQR9sNkA3I&t=2s)
+1. [Django Rest framework](https://www.django-rest-framework.org/)
+2. [Django for APIs](https://djangoforapis.com/)
+3. [Markdown Tips & Tricks 2022 - Markdown Crash Course](https://www.youtube.com/watch?v=ftOBvusMHjQ)
+4. [Adding Social Authentication to Django](https://testdriven.io/blog/django-social-auth/)
+5. [Email + Social Logins in Django – Step by Step Guide](https://www.geeksforgeeks.org/email-social-logins-in-django-step-by-step-guide/)
+6. [Create New App In Facebook Developers Account Create App ID and App Secret Key In Facebook Developer](https://youtu.be/2XVmmXKJGVg?si=XDUmDDKjHqU7MbIA)
+7. [Django Rest Framework Course - Social Logins with React and DRF - Part-9](https://www.youtube.com/watch?v=wlcCvzOLL8w&t=2245s)
 
 ### Tools used
 
