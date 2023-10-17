@@ -169,5 +169,11 @@ class Listing(models.Model):
         self.photo_6.storage.delete(self.photo_6.name)
         super().delete()
 
+    class Meta:
+        ordering = ['-created_at']
+
     def __str__(self):
+        """
+        Return the title of the listing.
+        """
         return self.title
