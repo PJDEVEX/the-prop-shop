@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     "corsheaders",
     # Project Apps
     "accounts",
+    "listings"
 ]
 
 SITE_ID = 1
