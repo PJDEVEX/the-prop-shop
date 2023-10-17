@@ -101,7 +101,7 @@ class Listing(models.Model):
     )
     price = models.IntegerField()
     title = models.CharField(max_length=255)
-    description = models.TextField()
+    description = models.TextField(max_length=3000)
     main_photo = models.ImageField(upload_to="images/")
     photo_1 = models.ImageField(
         upload_to="images/", blank=True, null=True

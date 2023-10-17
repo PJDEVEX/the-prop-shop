@@ -4,6 +4,7 @@ from django.views.generic import TemplateView
 from django.conf import settings
 from accounts import urls as accounts_urls
 
+
 urlpatterns = [
     # Admin panel
     path("admin/", admin.site.urls),
