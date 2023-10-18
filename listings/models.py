@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.timezone import now
 from django.contrib.auth import get_user_model
+from django.utils.translation import gettext_lazy as _
 
 # Choices for different fields
 ADVERTISER_TYPE_CHOICES = [
@@ -55,6 +56,7 @@ class City(models.Model):
 
     class Meta:
         verbose_name_plural = "cities"
+        ordering = ['name']
 
     def __str__(self):
         return self.name
@@ -85,7 +87,7 @@ class Listing(models.Model):
     district = models.ForeignKey(District, on_delete=models.CASCADE)
     bedrooms = models.IntegerField()
     bathrooms = models.IntegerField()
-    floor_area = models.IntegerField()
+    floor_area = models.IntegerField(_("Floor Area (SqFt)"))
     land_area = models.IntegerField(null=True, blank=True)
     land_area_unit = models.CharField(
         max_length=10,
@@ -99,7 +101,7 @@ class Listing(models.Model):
         null=True,
         blank=True,
     )
-    price = models.IntegerField()
+    price = models.IntegerField(_("Price (Rs.)"))
     title = models.CharField(max_length=255)
     description = models.TextField(max_length=3000)
     main_photo = models.ImageField(upload_to="images/")
@@ -134,6 +136,10 @@ class Listing(models.Model):
     def get_offer_type_display(self):
         """Return the display value of the offer type."""
         return dict(OFFER_TYPE_CHOICES).get(self.offer_type, "Sale")
+   
+    def formatted_floor_area(self):
+        """Return the formatted floor area with the 'SqFt' suffix."""
+        return f"{self.floor_area} SqFt"
 
     def get_property_type_display(self):
         """Return the display value of the property type."""
@@ -148,11 +154,8 @@ class Listing(models.Model):
 
     def save(self, *args, **kwargs):
         """
-        Custom save method to auto-generate title and
         populate postal code and district.
         """
-        if not self.title:
-            self.title = f"{self.get_property_type_display()} for {self.get_offer_type_display()} in {self.city.name} - LKR {self.price}"
         if self.city:
             self.postal_code = self.city.postal_code
             self.district = self.city.district
