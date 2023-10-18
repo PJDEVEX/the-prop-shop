@@ -1,4 +1,5 @@
 from django.db import models
+from accounts.models import Account
 from django.utils.timezone import now
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
@@ -65,8 +66,10 @@ class City(models.Model):
 class Listing(models.Model):
     """Model to represent property listings."""
 
-    advertizer = models.OneToOneField(
-        get_user_model(), on_delete=models.CASCADE
+    advertizer = models.ForeignKey(
+        Account,
+        on_delete=models.CASCADE,
+        related_name="listings",
     )
     advertizer_type = models.CharField(
         max_length=10,
@@ -136,10 +139,6 @@ class Listing(models.Model):
     def get_offer_type_display(self):
         """Return the display value of the offer type."""
         return dict(OFFER_TYPE_CHOICES).get(self.offer_type, "Sale")
-   
-    def formatted_floor_area(self):
-        """Return the formatted floor area with the 'SqFt' suffix."""
-        return f"{self.floor_area} SqFt"
 
     def get_property_type_display(self):
         """Return the display value of the property type."""
