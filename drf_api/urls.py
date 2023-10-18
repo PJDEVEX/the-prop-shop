@@ -16,4 +16,6 @@ urlpatterns = [
     #  path("", TemplateView.as_view(template_name="index.html")),
     # Accounts views
     path("api/", include("accounts.urls", namespace="users")),
+    # listings views
+    path("api/", include("listings.urls", namespace="listings")),
 ]
