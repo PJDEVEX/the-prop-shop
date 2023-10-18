@@ -26,4 +26,35 @@ class ListingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Listing
-        fields = "__all__"
+        fields = (
+            'id',
+            'advertizer',
+            'advertizer_type',
+            'offer_type',
+            'property_type',
+            'address_no',
+            'address_1',
+            'address_2',
+            'city',
+            'postal_code',
+            'district',
+            'bedrooms',
+            'bathrooms',
+            'floor_area',
+            'land_area',
+            'land_area_unit',
+            'furnishing_status',
+            'price',
+            'title',
+            'description',
+            'main_photo',
+            'photo_1',
+            'photo_2',
+            'photo_3',
+            'photo_4',
+            'photo_5',
+            'photo_6',
+            'is_published',
+            'created_at',
+            'modified_at',
+        )
