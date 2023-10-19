@@ -126,7 +126,11 @@ class Listing(models.Model):
     photo_6 = models.ImageField(
         upload_to="images/", blank=True, null=True
     )
-    is_published = models.BooleanField(default=False)
+    is_published = models.BooleanField(
+        default=False,
+        help_text="Please review your listing details for accuracy before publishing.\nEnsure all information is complete and correct.\nThank you."
+        )
+
     created_at = models.DateTimeField(default=now)
     modified_at = models.DateTimeField(default=now)
 
