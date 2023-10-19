@@ -1,5 +1,7 @@
 from rest_framework import serializers
 from .models import Listing, ADVERTISER_TYPE_CHOICES, OFFER_TYPE_CHOICES, PROPERTY_TYPE_CHOICES, LAND_AREA_UNIT_CHOICES, FURNISHING_STATUS_CHOICES
+from django.contrib.humanize.templatetags.humanize import intcomma
+from django.utils.translation import gettext_lazy as _
 
 
 class ListingSerializer(serializers.ModelSerializer):
@@ -8,7 +10,10 @@ class ListingSerializer(serializers.ModelSerializer):
     advertizer_type = serializers.ChoiceField(choices=ADVERTISER_TYPE_CHOICES, style={'base_template': 'radio.html'})
     offer_type = serializers.ChoiceField(choices=OFFER_TYPE_CHOICES, style={'base_template': 'radio.html'})
     property_type = serializers.ChoiceField(choices=PROPERTY_TYPE_CHOICES, style={'base_template': 'radio.html'})
+    floor_area = serializers.IntegerField(label=_("Floor Area (SqFt)"))
+    land_area = serializers.IntegerField()
     land_area_unit = serializers.ChoiceField(choices=LAND_AREA_UNIT_CHOICES, style={'base_template': 'radio.html'})
+    price = serializers.IntegerField(label=_("Price (Rs.)"))
     furnishing_status = serializers.ChoiceField(choices=FURNISHING_STATUS_CHOICES, style={'base_template': 'radio.html'})
     profile_id = serializers.ReadOnlyField(
         source="accounts.account.id"
@@ -21,6 +26,13 @@ class ListingSerializer(serializers.ModelSerializer):
     district = serializers.ReadOnlyField()
     created_at = serializers.ReadOnlyField()
     modified_at = serializers.ReadOnlyField()
+
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        data["floor_area (in Sqft)"] = intcomma(instance.floor_area)
+        data["land_area"] = intcomma(instance.land_area)
+        data["price"] = intcomma(instance.price)
+        return data
 
     def validate_image(self, value):
         """
