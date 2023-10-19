@@ -57,7 +57,7 @@ class City(models.Model):
 
     class Meta:
         verbose_name_plural = "cities"
-        ordering = ['name']
+        ordering = ["name"]
 
     def __str__(self):
         return self.name
@@ -74,7 +74,7 @@ class Listing(models.Model):
     advertizer_type = models.CharField(
         max_length=10,
         choices=ADVERTISER_TYPE_CHOICES,
-        default="owner"
+        default="owner",
     )
     offer_type = models.CharField(
         max_length=10, choices=OFFER_TYPE_CHOICES, default="sale"
@@ -127,8 +127,8 @@ class Listing(models.Model):
     )
     is_published = models.BooleanField(
         default=False,
-        help_text="Please review your listing details for accuracy before publishing. Ensure all information is complete and correct. Thank you."
-        )
+        help_text="Please review your listing details for accuracy before publishing. Ensure all information is complete and correct. Thank you.",
+    )
 
     created_at = models.DateTimeField(default=now)
     modified_at = models.DateTimeField(default=now)
@@ -175,7 +175,7 @@ class Listing(models.Model):
         super().delete()
 
     class Meta:
-        ordering = ['-created_at']
+        ordering = ["-created_at"]
 
     def __str__(self):
         """
