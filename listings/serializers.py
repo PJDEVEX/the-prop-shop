@@ -1,16 +1,22 @@
 from rest_framework import serializers
-from .models import Listing
+from .models import Listing, ADVERTISER_TYPE_CHOICES, OFFER_TYPE_CHOICES, PROPERTY_TYPE_CHOICES, LAND_AREA_UNIT_CHOICES, FURNISHING_STATUS_CHOICES
 
 
 class ListingSerializer(serializers.ModelSerializer):
     advertizer = serializers.ReadOnlyField(source="accounts.username")
     is_owner = serializers.SerializerMethodField()
+    advertizer_type = serializers.ChoiceField(choices=ADVERTISER_TYPE_CHOICES, style={'base_template': 'radio.html'})
+    offer_type = serializers.ChoiceField(choices=OFFER_TYPE_CHOICES, style={'base_template': 'radio.html'})
+    property_type = serializers.ChoiceField(choices=PROPERTY_TYPE_CHOICES, style={'base_template': 'radio.html'})
+    land_area_unit = serializers.ChoiceField(choices=LAND_AREA_UNIT_CHOICES, style={'base_template': 'radio.html'})
+    furnishing_status = serializers.ChoiceField(choices=FURNISHING_STATUS_CHOICES, style={'base_template': 'radio.html'})
     profile_id = serializers.ReadOnlyField(
         source="accounts.account.id"
     )
     profile_image = serializers.ReadOnlyField(
         source="accounts.account.image.url"
     )
+    # advertizer_type = serializers.ChoiceField()
     postal_code = serializers.ReadOnlyField()
     district = serializers.ReadOnlyField()
     created_at = serializers.ReadOnlyField()
