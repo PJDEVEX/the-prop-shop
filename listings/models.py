@@ -74,7 +74,7 @@ class Listing(models.Model):
     advertizer_type = models.CharField(
         max_length=10,
         choices=ADVERTISER_TYPE_CHOICES,
-        default="owner",
+        default="owner"
     )
     offer_type = models.CharField(
         max_length=10, choices=OFFER_TYPE_CHOICES, default="sale"
@@ -89,13 +89,12 @@ class Listing(models.Model):
     postal_code = models.CharField(max_length=10)
     district = models.ForeignKey(District, on_delete=models.CASCADE)
     bedrooms = models.IntegerField()
-    bathrooms = models.IntegerField()
+    bathrooms = models.IntegerField(blank=True)
     floor_area = models.IntegerField(_("Floor Area (SqFt)"))
-    land_area = models.IntegerField(null=True, blank=True)
+    land_area = models.IntegerField(blank=True)
     land_area_unit = models.CharField(
         max_length=10,
         choices=LAND_AREA_UNIT_CHOICES,
-        null=True,
         blank=True,
     )
     furnishing_status = models.CharField(
@@ -128,7 +127,7 @@ class Listing(models.Model):
     )
     is_published = models.BooleanField(
         default=False,
-        help_text="Please review your listing details for accuracy before publishing.\nEnsure all information is complete and correct.\nThank you."
+        help_text="Please review your listing details for accuracy before publishing. Ensure all information is complete and correct. Thank you."
         )
 
     created_at = models.DateTimeField(default=now)
