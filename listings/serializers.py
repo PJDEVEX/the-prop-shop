@@ -7,11 +7,17 @@ from .models import (
     LAND_AREA_UNIT_CHOICES,
     FURNISHING_STATUS_CHOICES,
 )
-from django.contrib.humanize.templatetags.humanize import intcomma
+from django.contrib.humanize.templatetags.humanize import intcomma, naturaltime
 from django.utils.translation import gettext_lazy as _
 
 
 class ListingSerializer(serializers.ModelSerializer):
+    """
+    Serializer for the Listing model.
+
+    Transform Listing objects into JSON data for API responses.
+    """
+
     advertizer = serializers.ReadOnlyField(source="accounts.username")
     is_owner = serializers.SerializerMethodField()
     advertizer_type = serializers.ChoiceField(
@@ -45,17 +51,21 @@ class ListingSerializer(serializers.ModelSerializer):
     profile_image = serializers.ReadOnlyField(
         source="accounts.account.image.url"
     )
-    # advertizer_type = serializers.ChoiceField()
     postal_code = serializers.ReadOnlyField()
     district = serializers.ReadOnlyField()
     created_at = serializers.ReadOnlyField()
     modified_at = serializers.ReadOnlyField()
 
     def to_representation(self, instance):
+        """
+        Transform the object into a JSON representation.
+        """
         data = super().to_representation(instance)
         data["floor_area (in Sqft)"] = intcomma(instance.floor_area)
         data["land_area"] = intcomma(instance.land_area)
         data["price"] = intcomma(instance.price)
+        data["created_at"] = naturaltime(instance.created_at)
+        data["modified_at"] = naturaltime(instance.modified_at)
         return data
 
     def validate_image(self, value):
@@ -78,7 +88,7 @@ class ListingSerializer(serializers.ModelSerializer):
 
     def get_is_advertizer(self, obj):
         """
-        Method to determine if the current user is the owner of the post.
+        Determine if the current user is the owner of the post.
         """
         request = self.context["request"]
         return request.user == obj.owner
