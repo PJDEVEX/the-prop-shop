@@ -7,6 +7,7 @@ Briefly describe your project and its purpose.
 
 - [Strategy](#strategy)
 - [Scope](#scope)
+    - [features and functionalities](#features-and-functionalities)
 - [Structure](#structure)
   - [Frameworks/technologies used](#frameworkstechnologies-used)
 - [Skeleton](#skeleton)
@@ -20,6 +21,7 @@ Briefly describe your project and its purpose.
       - [*Filter and Search*](#filter-and-search)
       - [*Save listing*](#save-listing)
     - [Backend Testing](#backend-testing)
+    - [Bugs](#bugs)
 - [Surface](#surface)
   - [Frontend](#frontend)
     - [Libraries](#libraries)
@@ -48,9 +50,15 @@ Briefly describe your project and its purpose.
 
 # Scope
 
-- features and functionalities 
+### features and functionalities 
+
+- *Boosting Visibility*  
+
+Enhance your listing's visibility with our custom sorting algorithm! Listings with over 4 photos and 150+ word descriptions are given a 70% priority boost, ensuring they appear at the top of the list for higher user engagement. Get your listings noticed!
+
 - user stories
 - project roadmap to help others understand the scope of the project.
+
 
 
 # Structure
@@ -162,6 +170,9 @@ The filter and search functionality allows users to search for properties based 
 
 ### Backend Testing
 
+### Bugs
+
+- Bug: Custom Permission Class 'IsOwnerOrReadOnly' Attribute Error #76
 
 # Surface
 
