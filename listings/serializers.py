@@ -33,6 +33,11 @@ class ListingSerializer(serializers.ModelSerializer):
         style={"base_template": "radio.html"},
     )
     full_address = serializers.SerializerMethodField()
+    phone_number = serializers.CharField(
+        max_length=20,
+        required=False,
+        allow_blank=True,
+    )
     floor_area = serializers.IntegerField(
         label=_("Floor Area (SqFt)")
     )
@@ -94,6 +99,20 @@ class ListingSerializer(serializers.ModelSerializer):
         """
         return instance.get_full_address()
 
+    def validate_phone_number(self, value):
+        """
+        Validate and format the phone number.
+        """
+        if value:
+            try:
+                parsed_number = phonenumbers.parse(value, None)
+                if not phonenumbers.is_valid_number(parsed_number):
+                    raise serializers.ValidationError("Invalid phone number")
+                return phonenumbers.format_number(parsed_number, phonenumbers.PhoneNumberFormat.E164)
+            except phonenumbers.phonenumberutil.NumberFormatError:
+                raise serializers.ValidationError("Invalid phone number")
+        return value
+
     def get_is_owner(self, obj):
         """
         Determine if the current user is the owner of the post.
@@ -119,6 +138,7 @@ class ListingSerializer(serializers.ModelSerializer):
             "postal_code",
             "district",
             "full_address",
+            "phone_number",
             "bedrooms",
             "bathrooms",
             "floor_area",

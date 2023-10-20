@@ -5,6 +5,7 @@ from django.utils.timezone import now
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 from .addresses_choices import city_dict
+import phonenumbers
 
 # Choices for different fields
 ADVERTISER_TYPE_CHOICES = [
@@ -81,6 +82,12 @@ class Listing(models.Model):
     city = models.ForeignKey(City, on_delete=models.CASCADE)
     postal_code = models.CharField(max_length=10)
     district = models.CharField(max_length=20)
+    phone_number = models.CharField(
+        max_length=20,
+        help_text="Contact phone number",
+        null=True,
+        blank=True,
+    )
     bedrooms = models.IntegerField()
     bathrooms = models.IntegerField(blank=True)
     floor_area = models.IntegerField(_("Floor Area (SqFt)"))
@@ -150,6 +157,19 @@ class Listing(models.Model):
         """Return the full address as a single line."""
         full_address = f"{self.address_no}, {self.address_1}, {self.address_2}, {self.city}"
         return full_address
+    
+    def clean_phone_number(self):
+        """
+        Validate and format the phone number using phonenumbers package.
+        """
+        if self.phone_number:
+            try:
+                parsed_number = phonenumbers.parse(self.phone_number, None)
+                if not phonenumbers.is_valid_number(parsed_number):
+                    raise ValidationError("Invalid phone number")
+                self.phone_number = phonenumbers.format_number(parsed_number, phonenumbers.PhoneNumberFormat.E164)
+            except phonenumbers.phonenumberutil.NumberFormatError:
+                raise ValidationError("Invalid phone number")
 
     def save(self, *args, **kwargs):
         """

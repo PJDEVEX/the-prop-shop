@@ -257,10 +257,11 @@ By evaluating and comparing the features, performance, and user experience of La
 3. [Markdown Tips & Tricks 2022 - Markdown Crash Course](https://www.youtube.com/watch?v=ftOBvusMHjQ)
 4. [Adding Social Authentication to Django](https://testdriven.io/blog/django-social-auth/)
 5. [Email + Social Logins in Django – Step by Step Guide](https://www.geeksforgeeks.org/email-social-logins-in-django-step-by-step-guide/)
-6. [Create New App In Facebook Developers Account Create App ID and App Secret Key In Facebook Developer](https://youtu.be/2XVmmXKJGVg?si=XDUmDDKjHqU7MbIA)
-7. [Django Rest Framework Course - Social Logins with React and DRF - Part-9](https://www.youtube.com/watch?v=wlcCvzOLL8w&t=2245s)
-8. [Serializer fields](https://www.django-rest-framework.org/api-guide/fields/#serializer-fields)
-9. [django.contrib.humanize](https://docs.djangoproject.com/en/4.2/ref/contrib/humanize/#intcomma)
+6. [Drf-Social-Oauth2: Easy oauth2 integration](https://drf-social-oauth2.readthedocs.io/en/latest/index.html)
+7. [Create New App In Facebook Developers Account Create App ID and App Secret Key In Facebook Developer](https://youtu.be/2XVmmXKJGVg?si=XDUmDDKjHqU7MbIA)
+8. [Django Rest Framework Course - Social Logins with React and DRF - Part-9](https://www.youtube.com/watch?v=wlcCvzOLL8w&t=2245s)
+9. [Serializer fields](https://www.django-rest-framework.org/api-guide/fields/#serializer-fields)
+10. [django.contrib.humanize](https://docs.djangoproject.com/en/4.2/ref/contrib/humanize/#intcomma)
 
 ### Tools used
 
