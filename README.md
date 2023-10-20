@@ -117,6 +117,7 @@ dj-rest-auth 5.0.1 - https://pypi.org/project/dj-rest-auth/
 drf-social-oauth2 2.1.3 - https://drf-social-oauth2.readthedocs.io/en/latest/ - the main library which enables us oauth2 token based authentication for email password as well as google and facebook
 coverage==7.3.2 - https://coverage.readthedocs.io/en/7.3.2/ - Coverage.py is a tool for measuring code coverage of Python programs.
 
+
 ### Database
 
 - the schema
@@ -262,6 +263,9 @@ By evaluating and comparing the features, performance, and user experience of La
 8. [Django Rest Framework Course - Social Logins with React and DRF - Part-9](https://www.youtube.com/watch?v=wlcCvzOLL8w&t=2245s)
 9. [Serializer fields](https://www.django-rest-framework.org/api-guide/fields/#serializer-fields)
 10. [django.contrib.humanize](https://docs.djangoproject.com/en/4.2/ref/contrib/humanize/#intcomma)
+11. [phonenumbers 8.13.23](https://pypi.org/project/phonenumbers/)
+12. [MERN Stack Project: Build a Modern Real Estate Marketplace with react MERN (jwt, redux toolkit)](https://github.com/sahandghavidel/mern-estate/blob/main/client/src/App.jsx)
+13. [https://estate.100jsprojects.com/](https://estate.100jsprojects.com/)
 
 ### Tools used
 
