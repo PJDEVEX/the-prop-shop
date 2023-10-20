@@ -60,7 +60,8 @@ INSTALLED_APPS = [
     "phonenumbers",
     # Project Apps
     "accounts",
-    "listings"
+    "listings",
+    "favorites"
 ]
 
 SITE_ID = 1
