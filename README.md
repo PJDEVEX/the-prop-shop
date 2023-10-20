@@ -95,27 +95,49 @@ Enhance your listing's visibility with our custom sorting algorithm! Listings wi
 - how to add new features or endpoints to the backend.
 
 ### Technologies, libraries, and frameworks
+
 | No. | Framework/Library/Dependency                                | Purpose                                             |
 |----|-------------------------------------------------------------|-----------------------------------------------------|
-| 1  | [![Django 4.2.5](https://img.shields.io/badge/Django-4.2.5-092E20?logo=django)](https://pypi.org/project/Django/) | A high-level Python web framework that encourages rapid development and clean, pragmatic design. |
-| 2  | [![django-cloudinary-storage 0.3.0](https://img.shields.io/badge/django--cloudinary--storage-0.3.0-2C3E50?logo=django)](https://pypi.org/project/django-cloudinary-storage/) | Django package that provides Cloudinary storages for both media and static files as well as management commands for removing unnecessary files. |
-| 3  | [![Pillow 10.0.1](https://img.shields.io/badge/Pillow-10.0.1-blue?logo=pillow)](https://pypi.org/project/Pillow/) | Adds image processing capabilities to your Python interpreter. |
-| 4  | [![asgiref 3.7.2](https://img.shields.io/badge/asgiref-3.7.2-BC7D29)](https://pypi.org/project/asgiref/) | ASGI framework, often used in Django applications. |
-| 5  | [![backports.zoneinfo 0.2.1](https://img.shields.io/badge/backports.zoneinfo-0.2.1-0088CC)](https://pypi.org/project/backports.zoneinfo/) | Backports of Python zoneinfo module for working with time zones. |
-| 6  | [![cloudinary 1.34.0](https://img.shields.io/badge/cloudinary-1.34.0-FF8800)](https://pypi.org/project/cloudinary/) | Python SDK for Cloudinary, a cloud-based image and video management platform. |
-| 7  | [![sqlparse 0.4.4](https://img.shields.io/badge/sqlparse-0.4.4-1A4E8B)](https://pypi.org/project/sqlparse/) | SQL parsing and formatting library for Python. |
-| 8  | [![urllib3 1.26.16](https://img.shields.io/badge/urllib3-1.26.16-0055FF)](https://pypi.org/project/urllib3/) | HTTP library for Python, used for making HTTP requests. |
-| 9  | [![djangorestframework 3.14.0](https://img.shields.io/badge/djangorestframework-3.14.0-33AADD?logo=django)](https://pypi.org/project/djangorestframework/) | A powerful and flexible toolkit for building Web APIs in Django. |
-| 10 | [![black 23.9.1](https://img.shields.io/badge/black-23.9.1-000000)](https://pypi.org/project/black/) | The uncompromising code formatter for Python. |
-| 11 | [![click 8.1.7](https://img.shields.io/badge/click-8.1.7-333333)](https://pypi.org/project/click/) | A simple Python module to add command-line interface creation capabilities to your software. |
-| 12 | [![pathspec 0.11.2](https://img.shields.io/badge/pathspec-0.11.2-339933)](https://pypi.org/project/pathspec/) | Utility library for gitignore style pattern matching of file paths. |
-| 13 | [![pyenchant 3.2.2](https://img.shields.io/badge/pyenchant-3.2.2-FF5500)](https://pypi.org/project/pyenchant/) | A spellchecking library for Python. |
+| 1  | [![asgiref 3.7.2](https://img.shields.io/badge/asgiref-3.7.2-BC7D29)](https://pypi.org/project/asgiref/) | ASGI framework, often used in Django applications. |
+| 2  | [![backports.zoneinfo 0.2.1](https://img.shields.io/badge/backports.zoneinfo-0.2.1-0088CC)](https://pypi.org/project/backports.zoneinfo/) | Backports of Python zoneinfo module for working with time zones. |
+| 3  | [![black 23.9.1](https://img.shields.io/badge/black-23.9.1-000000)](https://pypi.org/project/black/) | The uncompromising code formatter for Python. |
+| 4  | [![click 8.1.7](https://img.shields.io/badge/click-8.1.7-333333)](https://pypi.org/project/click/) | A simple Python module to add command-line interface creation capabilities to your software. |
+| 5  | [![cloudinary 1.34.0](https://img.shields.io/badge/cloudinary-1.34.0-FF8800)](https://pypi.org/project/cloudinary/) | Python SDK for Cloudinary, a cloud-based image and video management platform. |
+| 6  | [![coverage 7.3.2](https://img.shields.io/badge/coverage-7.3.2-brightgreen)](https://coverage.readthedocs.io/en/7.3.2/) | A tool for measuring code coverage of Python programs. |
+| 7  | [![dj-database-url 2.1.0](https://img.shields.io/badge/dj-database-url-2.1.0-FF3333)](https://pypi.org/project/dj-database-url/) | A Django package for configuring database connections via URLs. |
+| 8  | [![dj-rest-auth 5.0.1](https://img.shields.io/badge/dj-rest-auth-5.0.1-1D78B8)](https://pypi.org/project/dj-rest-auth/) | A Django app for handling RESTful authentication. |
+| 9  | [![Django 4.2.5](https://img.shields.io/badge/Django-4.2.5-092E20?logo=django)](https://pypi.org/project/Django/) | A high-level Python web framework that encourages rapid development and clean, pragmatic design. |
+| 10 | [![django-cloudinary-storage 0.3.0](https://img.shields.io/badge/django--cloudinary--storage-0.3.0-2C3E50?logo=django)](https://pypi.org/project/django-cloudinary-storage/) | Django package that provides Cloudinary storages for both media and static files as well as management commands for removing unnecessary files. |
+| 11 | [![django-cors-headers 4.2.0](https://img.shields.io/badge/django-cors-headers-4.2.0-FF9900)](https://pypi.org/project/django-cors-headers/) | A Django app for handling Cross-Origin Resource Sharing (CORS). |
+| 12 | [![django-oauth-toolkit 2.3.0](https://img.shields.io/badge/django-oauth-toolkit-2.3.0-00B3E0)](https://pypi.org/project/django-oauth-toolkit/) | A package for adding OAuth2 capabilities to Django projects. |
+| 13 | [![djangorestframework 3.14.0](https://img.shields.io/badge/djangorestframework-3.14.0-33AADD?logo=django)](https://pypi.org/project/djangorestframework/) | A powerful and flexible toolkit for building Web APIs in Django. |
+| 14 | [![djangorestframework-simplejwt 5.3.0](https://img.shields.io/badge/djangorestframework-simplejwt-5.3.0-339933?logo=django)](https://pypi.org/project/djangorestframework-simplejwt/) | A package for adding simple JWT authentication to Django REST framework. |
+| 15 | [![drf-social-oauth2 2.1.3](https://img.shields.io/badge/drf-social-oauth2-2.1.3-428BCA)](https://pypi.org/project/drf-social-oauth2/) | The main library that enables OAuth2 token-based authentication for email, password, as well as Google and Facebook. |
+| 16 | [![ecdsa 0.18.0](https://img.shields.io/badge/ecdsa-0.18.0-4D4D4D)](https://pypi.org/project/ecdsa/) | A Python library for ECDSA (Elliptic Curve Digital Signature Algorithm). |
+| 17 | [![gunicorn 21.2.0](https://img.shields.io/badge/gunicorn-21.2.0-366790)](https://pypi.org/project/gunicorn/) | A Python WSGI HTTP server for running web applications. |
+| 18 | [![jwcrypto 1.5.0](https://img.shields.io/badge/jwcrypto-1.5.0-483D8B)](https://pypi.org/project/jwcrypto/) | A library for working with JSON Web Tokens (JWT). |
+| 19 | [![oauthlib 3.2.2](https://img.shields.io/badge/oauthlib-3.2.2-4B0082)](https://pypi.org/project/oauthlib/) | A generic and reusable Python implementation of OAuth1 and OAuth2. |
+| 20 | [![pathspec 0.11.2](https://img.shields.io/badge/pathspec-0.11.2-339933)](https://pypi.org/project/pathspec/) | A utility library for gitignore-style pattern matching of file paths. |
+| 21 | [![phonenumbers 8.13.23](https://img.shields.io/badge/phonenumbers-8.13.23-0099CC)](https://pypi.org/project/phonenumbers/) | A Python library for working with phone numbers. |
+| 22 | [![Pillow 10.0.1](https://img.shields.io/badge/Pillow-10.0.1-blue?logo=pillow)](https://pypi.org/project/Pillow/) | Adds image processing capabilities to your Python interpreter. |
+| 23 | [![psycopg2 2.9.8](https://img.shields.io/badge/psycopg2-2.9.8-336791)](https://pypi.org/project/psycopg2/) | PostgreSQL adapter for Python. |
+| 24 | [![pyasn1 0.5.0](https://img.shields.io/badge/pyasn1-0.5.0-4B0082)](https://pypi.org/project/pyasn1/) | A Python library for working with ASN.1 data. |
+| 25 | [![pyenchant 3.2.2](https://img.shields.io/badge/pyenchant-3.2.2-FF5500)](https://pypi.org/project/pyenchant/) | A spellchecking library for Python. |
+| 26 | [![PyJWT 2.8.0](https://img.shields.io/badge/PyJWT-2.8.0-0099CC)](https://pypi.org/project/PyJWT/) | A Python library for working with JSON Web Tokens (JWT). |
+| 27 | [![python-jose 3.3.0](https://img.shields.io/badge/python-jose-3.3.0-006699)](https://pypi.org/project/python-jose/) | A Python library for working with JOSE (JSON Object Signing and Encryption). |
+| 28 | [![python3-openid 3.2.0](https://img.shields.io/badge/python3-openid-3.2.0-FFA500)](https://pypi.org/project/python3-openid/) | A Python 3 implementation of the OpenID protocol. |
+| 29 | [![requests-oauthlib 1.3.1](https://img.shields.io/badge/requests-oauthlib-1.3.1-0099CC)](https://pypi.org/project/requests-oauthlib/) | A library for adding OAuth support to HTTP requests. |
+| 30 | [![responses 0.23.3](https://img.shields.io/badge/responses-0.23.3-336791)](https://pypi.org/project/responses/) | A utility for mocking HTTP requests in Python. |
+| 31 | [![rsa 4.9](https://img.shields.io/badge/rsa-4.9-00B3E0)](https://pypi.org/project/rsa/) | A Python library for working with RSA (Rivest–Shamir–Adleman) encryption. |
+| 32 | [![social-auth-app-django 5.3.0](https://img.shields.io/badge/social-auth-app-django-5.3.0-FF9966)](https://pypi.org/project/social-auth-app-django/) | An extension for Python Social Auth that integrates with Django. |
+| 33 | [![social-auth-core 4.4.2](https://img.shields.io/badge/social-auth-core-4.4.2-428BCA)](https://pypi.org/project/social-auth-core/) | The core library for Python Social Auth. |
+| 34 | [![sqlparse 0.4.4](https://img.shields.io/badge/sqlparse-0.4.4-1A4E8B)](https://pypi.org/project/sqlparse/) | SQL parsing and formatting library for Python. |
+| 35 | [![types-PyYAML 6.0.12.12](https://img.shields.io/badge/types-PyYAML-6.0.12.12-FFA500)](https://pypi.org/project/types-PyYAML/) | Type hints for PyYAML. |
+| 36 | [![urllib3 1.26.16](https://img.shields.io/badge/urllib3-1.26.16-0055FF)](https://pypi.org/project/urllib3/) | HTTP library for Python, used for making HTTP requests. |
+| 37 | [![whitenoise 6.5.0](https://img.shields.io/badge/whitenoise-6.5.0-6699CC)](https://pypi.org/project/whitenoise/) | Simplifies serving static files in Django web applications. |
 
-whitenoise - https://pypi.org/project/whitenoise/ 
-djangorestframework-simplejwt - https://pypi.org/project/djangorestframework-simplejwt/
-dj-rest-auth 5.0.1 - https://pypi.org/project/dj-rest-auth/
-drf-social-oauth2 2.1.3 - https://drf-social-oauth2.readthedocs.io/en/latest/ - the main library which enables us oauth2 token based authentication for email password as well as google and facebook
-coverage==7.3.2 - https://coverage.readthedocs.io/en/7.3.2/ - Coverage.py is a tool for measuring code coverage of Python programs.
+
+
 
 
 ### Database
@@ -263,9 +285,8 @@ By evaluating and comparing the features, performance, and user experience of La
 8. [Django Rest Framework Course - Social Logins with React and DRF - Part-9](https://www.youtube.com/watch?v=wlcCvzOLL8w&t=2245s)
 9. [Serializer fields](https://www.django-rest-framework.org/api-guide/fields/#serializer-fields)
 10. [django.contrib.humanize](https://docs.djangoproject.com/en/4.2/ref/contrib/humanize/#intcomma)
-11. [phonenumbers 8.13.23](https://pypi.org/project/phonenumbers/)
-12. [MERN Stack Project: Build a Modern Real Estate Marketplace with react MERN (jwt, redux toolkit)](https://github.com/sahandghavidel/mern-estate/blob/main/client/src/App.jsx)
-13. [https://estate.100jsprojects.com/](https://estate.100jsprojects.com/)
+11. [MERN Stack Project: Build a Modern Real Estate Marketplace with react MERN (jwt, redux toolkit)](https://github.com/sahandghavidel/mern-estate/blob/main/client/src/App.jsx)
+12. [https://estate.100jsprojects.com/](https://estate.100jsprojects.com/)
 
 ### Tools used
 
