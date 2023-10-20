@@ -7,7 +7,10 @@ from .models import (
     LAND_AREA_UNIT_CHOICES,
     FURNISHING_STATUS_CHOICES,
 )
-from django.contrib.humanize.templatetags.humanize import intcomma, naturaltime
+from django.contrib.humanize.templatetags.humanize import (
+    intcomma,
+    naturaltime,
+)
 from django.utils.translation import gettext_lazy as _
 
 
@@ -58,7 +61,7 @@ class ListingSerializer(serializers.ModelSerializer):
         source="accounts.account.image.url"
     )
     postal_code = serializers.ReadOnlyField()
-    district = serializers.ReadOnlyField(source='city.district')
+    district = serializers.ReadOnlyField(source="city.district")
     created_at = serializers.ReadOnlyField()
     modified_at = serializers.ReadOnlyField()
 
@@ -74,7 +77,7 @@ class ListingSerializer(serializers.ModelSerializer):
         data["modified_at"] = naturaltime(instance.modified_at)
         data["city"] = instance.city.name
         return data
-    
+
     def validate_image(self, value):
         """
         Validate the uploaded image size, width, and height.
@@ -92,7 +95,7 @@ class ListingSerializer(serializers.ModelSerializer):
                 "Image width larger than 4096px!"
             )
         return value
-    
+
     def get_full_address(self, instance):
         """
         Get the full address as a single line.
@@ -107,10 +110,16 @@ class ListingSerializer(serializers.ModelSerializer):
             try:
                 parsed_number = phonenumbers.parse(value, None)
                 if not phonenumbers.is_valid_number(parsed_number):
-                    raise serializers.ValidationError("Invalid phone number")
-                return phonenumbers.format_number(parsed_number, phonenumbers.PhoneNumberFormat.E164)
+                    raise serializers.ValidationError(
+                        "Invalid phone number"
+                    )
+                return phonenumbers.format_number(
+                    parsed_number, phonenumbers.PhoneNumberFormat.E164
+                )
             except phonenumbers.phonenumberutil.NumberFormatError:
-                raise serializers.ValidationError("Invalid phone number")
+                raise serializers.ValidationError(
+                    "Invalid phone number"
+                )
         return value
 
     def get_is_owner(self, obj):

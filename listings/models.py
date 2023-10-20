@@ -155,19 +155,27 @@ class Listing(models.Model):
 
     def get_full_address(self):
         """Return the full address as a single line."""
-        full_address = f"{self.address_no}, {self.address_1}, {self.address_2}, {self.city}"
+        full_address = (
+            f"{self.address_no}, {self.address_1}, "
+            f"{self.address_2}, {self.city}"
+        )
+
         return full_address
-    
+
     def clean_phone_number(self):
         """
         Validate and format the phone number using phonenumbers package.
         """
         if self.phone_number:
             try:
-                parsed_number = phonenumbers.parse(self.phone_number, None)
+                parsed_number = phonenumbers.parse(
+                    self.phone_number, None
+                )
                 if not phonenumbers.is_valid_number(parsed_number):
                     raise ValidationError("Invalid phone number")
-                self.phone_number = phonenumbers.format_number(parsed_number, phonenumbers.PhoneNumberFormat.E164)
+                self.phone_number = phonenumbers.format_number(
+                    parsed_number, phonenumbers.PhoneNumberFormat.E164
+                )
             except phonenumbers.phonenumberutil.NumberFormatError:
                 raise ValidationError("Invalid phone number")
 
