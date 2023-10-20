@@ -18,7 +18,7 @@ class ListingSerializer(serializers.ModelSerializer):
     Transform Listing objects into JSON data for API responses.
     """
 
-    advertizer = serializers.ReadOnlyField(source="accounts.username")
+    owner = serializers.ReadOnlyField(source="accounts.username")
     is_owner = serializers.SerializerMethodField()
     advertizer_type = serializers.ChoiceField(
         choices=ADVERTISER_TYPE_CHOICES,
@@ -52,7 +52,7 @@ class ListingSerializer(serializers.ModelSerializer):
         source="accounts.account.image.url"
     )
     postal_code = serializers.ReadOnlyField()
-    district = serializers.ReadOnlyField()
+    district = serializers.ReadOnlyField(source='city.district')
     created_at = serializers.ReadOnlyField()
     modified_at = serializers.ReadOnlyField()
 
@@ -66,8 +66,9 @@ class ListingSerializer(serializers.ModelSerializer):
         data["price"] = intcomma(instance.price)
         data["created_at"] = naturaltime(instance.created_at)
         data["modified_at"] = naturaltime(instance.modified_at)
+        data["city"] = instance.city.name
         return data
-
+    
     def validate_image(self, value):
         """
         Validate the uploaded image size, width, and height.
@@ -86,7 +87,7 @@ class ListingSerializer(serializers.ModelSerializer):
             )
         return value
 
-    def get_is_advertizer(self, obj):
+    def get_is_owner(self, obj):
         """
         Determine if the current user is the owner of the post.
         """
@@ -97,7 +98,7 @@ class ListingSerializer(serializers.ModelSerializer):
         model = Listing
         fields = (
             "id",
-            "advertizer",
+            "owner",
             "is_owner",
             "profile_id",
             "profile_image",
