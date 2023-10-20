@@ -1,8 +1,10 @@
 from django.db import models
 from accounts.models import Account
+from django.contrib.auth.models import User
 from django.utils.timezone import now
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
+from .addresses_choices import city_dict
 
 # Choices for different fields
 ADVERTISER_TYPE_CHOICES = [
@@ -39,20 +41,11 @@ FURNISHING_STATUS_CHOICES = [
 ]
 
 
-class District(models.Model):
-    """Model to represent districts."""
-
-    name = models.CharField(max_length=5)
-
-    def __str__(self):
-        return self.name
-
-
 class City(models.Model):
     """Model to represent cities."""
 
     name = models.CharField(max_length=55)
-    district = models.ForeignKey(District, on_delete=models.CASCADE)
+    district = models.CharField(max_length=55)
     postal_code = models.CharField(max_length=10)
 
     class Meta:
@@ -66,7 +59,7 @@ class City(models.Model):
 class Listing(models.Model):
     """Model to represent property listings."""
 
-    advertizer = models.ForeignKey(
+    owner = models.ForeignKey(
         Account,
         on_delete=models.CASCADE,
         related_name="listings",
@@ -87,7 +80,7 @@ class Listing(models.Model):
     address_2 = models.CharField(max_length=55)
     city = models.ForeignKey(City, on_delete=models.CASCADE)
     postal_code = models.CharField(max_length=10)
-    district = models.ForeignKey(District, on_delete=models.CASCADE)
+    district = models.CharField(max_length=20)
     bedrooms = models.IntegerField()
     bathrooms = models.IntegerField(blank=True)
     floor_area = models.IntegerField(_("Floor Area (SqFt)"))
@@ -127,7 +120,11 @@ class Listing(models.Model):
     )
     is_published = models.BooleanField(
         default=False,
-        help_text="Please review your listing details for accuracy before publishing. Ensure all information is complete and correct. Thank you.",
+        help_text="""
+    Please review your listing details for accuracy
+    before publishing. Ensure all information is complete
+    and correct. Thank you.
+""",
     )
 
     created_at = models.DateTimeField(default=now)
@@ -159,8 +156,10 @@ class Listing(models.Model):
         populate postal code and district.
         """
         if self.city:
-            self.postal_code = self.city.postal_code
-            self.district = self.city.district
+            city_data = city_dict.get(self.city.name)
+            if city_data:
+                self.postal_code = city_data["postal_code"]
+                self.district = city_data["district"]
         super().save(*args, **kwargs)
 
     def delete(self):
