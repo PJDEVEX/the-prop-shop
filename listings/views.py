@@ -7,6 +7,17 @@ from .serializers import ListingSerializer
 from drf_api.permissions import IsOwnerOrReadOnly
 
 
+# Define the calculate_listing_priority function here
+def calculate_listing_priority(listing):
+    photo_count = sum(1 for field in listing._meta.get_fields() if field.name.startswith('photo_') and getattr(listing, field.name))
+    description_word_count = len(listing.description.split())
+    
+    # Define your priority calculation logic here. This is just a simple example.
+    if photo_count > 4 and description_word_count > 150:
+        return 0.7  # High priority
+    else:
+        return 0.3  # Lower priority
+
 class ListingListCreateView(APIView):
     """
     API view for listing creation and retrieval.
@@ -17,9 +28,9 @@ class ListingListCreateView(APIView):
 
     def get(self, request):
         """
-        Retrieve a list of all listings.
+        Retrieve a list of all listings, sorted by priority.
 
-        Retrieves and returns a list of all available listings.
+        Retrieves and returns a list of all available listings, sorted by priority.
 
         Args:
             request: HTTP request object.
@@ -28,8 +39,12 @@ class ListingListCreateView(APIView):
             Response: JSON response containing the list of listings.
         """
         listings = Listing.objects.all()
+        
+        # Sort the listings based on priority
+        sorted_listings = sorted(listings, key=calculate_listing_priority, reverse=True)
+        
         serializer = ListingSerializer(
-            listings, many=True, context={"request": request}
+            sorted_listings, many=True, context={"request": request}
         )
         return Response(serializer.data)
 
@@ -57,6 +72,7 @@ class ListingListCreateView(APIView):
         return Response(
             serializer.errors, status=status.HTTP_400_BAD_REQUEST
         )
+
 
 
 class ListingRetrieveUpdateDestroyView(APIView):
