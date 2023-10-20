@@ -32,6 +32,7 @@ class ListingSerializer(serializers.ModelSerializer):
         choices=PROPERTY_TYPE_CHOICES,
         style={"base_template": "radio.html"},
     )
+    full_address = serializers.SerializerMethodField()
     floor_area = serializers.IntegerField(
         label=_("Floor Area (SqFt)")
     )
@@ -86,6 +87,12 @@ class ListingSerializer(serializers.ModelSerializer):
                 "Image width larger than 4096px!"
             )
         return value
+    
+    def get_full_address(self, instance):
+        """
+        Get the full address as a single line.
+        """
+        return instance.get_full_address()
 
     def get_is_owner(self, obj):
         """
@@ -111,6 +118,7 @@ class ListingSerializer(serializers.ModelSerializer):
             "city",
             "postal_code",
             "district",
+            "full_address",
             "bedrooms",
             "bathrooms",
             "floor_area",
