@@ -44,6 +44,9 @@ class ListingListCreateView(generics.ListCreateAPIView):
         sorted_listings = sorted(listings, key=calculate_listing_priority, reverse=True)
         serializer = ListingSerializer(sorted_listings, many=True, context={"request": request})
         return Response(serializer.data)
+    
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
 
 
 class ListingRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
