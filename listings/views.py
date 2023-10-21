@@ -33,6 +33,7 @@ class ListingListCreateView(generics.ListCreateAPIView):
     """
     API view for listing creation and retrieval.
     """
+
     queryset = Listing.objects.all()
     serializer_class = ListingSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
@@ -41,15 +42,21 @@ class ListingListCreateView(generics.ListCreateAPIView):
 
     def get(self, request, *args, **kwargs):
         listings = self.filter_queryset(self.get_queryset())
-        sorted_listings = sorted(listings, key=calculate_listing_priority, reverse=True)
-        serializer = ListingSerializer(sorted_listings, many=True, context={"request": request})
+        sorted_listings = sorted(
+            listings, key=calculate_listing_priority, reverse=True
+        )
+        serializer = ListingSerializer(
+            sorted_listings, many=True, context={"request": request}
+        )
         return Response(serializer.data)
-    
+
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
 
-class ListingRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
+class ListingRetrieveUpdateDestroyView(
+    generics.RetrieveUpdateDestroyAPIView
+):
     queryset = Listing.objects.all()
     serializer_class = ListingSerializer
     permission_classes = [IsOwnerOrReadOnly]
