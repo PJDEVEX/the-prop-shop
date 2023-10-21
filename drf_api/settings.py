@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     "drf_social_oauth2",
     "corsheaders",
     "phonenumbers",
+    "django_filters",
     # Project Apps
     "accounts",
     "listings",
