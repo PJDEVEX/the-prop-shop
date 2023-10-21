@@ -1,6 +1,6 @@
-import phonenumbers
-from phonenumberutil.phonenumberutil import NumberFormatException
 from rest_framework import serializers
+import phonenumbers
+from phonenumbers.phonenumberutil import NumberParseException
 from .models import (
     Listing,
     ADVERTISER_TYPE_CHOICES,
@@ -118,7 +118,7 @@ class ListingSerializer(serializers.ModelSerializer):
                 return phonenumbers.format_number(
                     parsed_number, phonenumbers.PhoneNumberFormat.E164
                 )
-            except NumberFormatException:
+            except NumberParseException:
                 raise serializers.ValidationError(
                     "Invalid phone number"
                 )
