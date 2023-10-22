@@ -146,9 +146,9 @@ ROOT_URLCONF = "drf_api.urls"
 if DEV:
     ALLOWED_HOSTS = ["8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu105.gitpod.io"]
 else:
-    ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(',')
+    ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS")
 
-CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS")
+CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS", "").split(',')
 
 CLIENT_ALLOWED_ORIGIN = os.environ.get("CLIENT_ORIGIN")
 
