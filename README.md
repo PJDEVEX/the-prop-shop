@@ -241,10 +241,14 @@ Describe the technologies, libraries, and frameworks used in the frontend of you
 ### Libraries
 
 
-|No|Library|Specific use in the application|Justification|
-| :- | :- | :- | :- |
-|||||
-|||||
+| No | Library | Specific use in the application | Justification |
+| --- | --- | --- | --- |
+| 2 | [ES7+ React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets) | Extensions for React, React-Native, and Redux in JS/TS with ES7+ syntax. Customizable. Built-in integration with prettier. | Enhances development workflow and code quality by providing useful code snippets and integration with prettier for consistent code formatting. |
+| 3 | [React Bootstrap](https://react-bootstrap.netlify.app/) | The most popular front-end framework, rebuilt for React. | Provides a collection of pre-designed UI components for React applications, helping to create responsive and aesthetically pleasing designs. |
+| 4 | [Google Fonts](https://fonts.google.com/) | Computer font and web font service owned by Google. | Offers a wide selection of web fonts to enhance the typography and visual appeal of the application. |
+| 5 | [Font Awesome](https://fontawesome.com/) | Internet's icon library and toolkit. | Simplifies the addition of high-quality icons and symbols to the application for improved user interface and user experience. |
+
+
 
 ### Enhanced User Experience with React
 how the use of a React library and/or implemented feature has contributed to improved user experience.
@@ -324,5 +328,9 @@ By evaluating and comparing the features, performance, and user experience of La
 | 1  | [Shields.io](https://shields.io/badges)  | Create badges. |
 | 2  | [Simple Icons](https://simpleicons.org/) | Find and download SVG icons for various brands and products. |
 |3| [Canva](https://www.canva.com/) | free-to-use online graphic design tool. |
-|4| [Google Fonts](https://fonts.google.com/) |  Computer font and web font service owned by Google.  |
-|5| [Font Awsome](https://fontawesome.com/) |  Internet's icon library and toolkit |
+|4| [Removebg](https://www.remove.bg/) | Remove Image Background |
+|5| [favicon](https://favicon.io/favicon-converter/) | Generate favicon from an image |
+|6 |[]()
+
+
+
