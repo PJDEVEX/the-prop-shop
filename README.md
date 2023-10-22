@@ -247,6 +247,8 @@ Describe the technologies, libraries, and frameworks used in the frontend of you
 | 3 | [React Bootstrap](https://react-bootstrap.netlify.app/) | The most popular front-end framework, rebuilt for React. | Provides a collection of pre-designed UI components for React applications, helping to create responsive and aesthetically pleasing designs. |
 | 4 | [Google Fonts](https://fonts.google.com/) | Computer font and web font service owned by Google. | Offers a wide selection of web fonts to enhance the typography and visual appeal of the application. |
 | 5 | [Font Awesome](https://fontawesome.com/) | Internet's icon library and toolkit. | Simplifies the addition of high-quality icons and symbols to the application for improved user interface and user experience. |
+| 6 | [React Router Dom](https://www.npmjs.com/package/react-router-dom) | Package contains bindings for using React Router in web applications. | It enables client-side routing in React apps, making single-page applications (SPAs) with multiple views and URLs possible. |
+
 
 
 
