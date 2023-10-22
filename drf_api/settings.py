@@ -148,9 +148,7 @@ if DEV:
 else:
     ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(',')
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu105.gitpod.io"
-]
+CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS")
 
 CLIENT_ALLOWED_ORIGIN = [os.environ.get("CLIENT_ORIGIN")]
 
