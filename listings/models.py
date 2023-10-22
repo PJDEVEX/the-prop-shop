@@ -134,8 +134,8 @@ class Listing(models.Model):
 """,
     )
 
-    created_at = models.DateTimeField(default=now)
-    modified_at = models.DateTimeField(default=now)
+    created_at = models.DateTimeField(auto_now_add=True)
+    modified_at = models.DateTimeField(auto_now=True)
 
     def get_advertiser_type_display(self):
         """Return the display value of the advertiser type."""
