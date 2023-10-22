@@ -150,7 +150,7 @@ else:
 
 CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS")
 
-CLIENT_ALLOWED_ORIGIN = [os.environ.get("CLIENT_ORIGIN")]
+CLIENT_ALLOWED_ORIGIN = os.environ.get("CLIENT_ORIGIN")
 
 TEMPLATES = [
     {
