@@ -323,4 +323,6 @@ By evaluating and comparing the features, performance, and user experience of La
 |----|--------------------------------------------|--------------------------------------------|
 | 1  | [Shields.io](https://shields.io/badges)  | Create badges. |
 | 2  | [Simple Icons](https://simpleicons.org/) | Find and download SVG icons for various brands and products. |
-
+|3| [Canva](https://www.canva.com/) | free-to-use online graphic design tool. |
+|4| [Google Fonts](https://fonts.google.com/) |  Computer font and web font service owned by Google.  |
+|5| [Font Awsome](https://fontawesome.com/) |  Internet's icon library and toolkit |
