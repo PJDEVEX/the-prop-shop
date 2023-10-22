@@ -19,6 +19,8 @@
   },
   "scripts": {
     "heroku-prebuild": "npm install -g serve",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
