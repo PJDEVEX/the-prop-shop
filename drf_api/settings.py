@@ -17,6 +17,9 @@ import dj_database_url
 if os.path.exists("env.py"):
     import env
 
+DEV = os.environ.get("DEV", False)
+
+
 # Config Cloudinary storage
 CLOUDINARY_STORAGE = {
     "CLOUDINARY_URL": os.environ.get("CLOUDINARY_URL")
@@ -140,7 +143,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "drf_api.urls"
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(',')
+if DEV:
+    ALLOWED_HOSTS = ["8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu105.gitpod.io"]
+else:
+    ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(',')
 
 CSRF_TRUSTED_ORIGINS = [
     "https://8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu105.gitpod.io"
@@ -172,7 +178,7 @@ WSGI_APPLICATION = "drf_api.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 # Databases for DEBUG=1:SQLite and production: PostgresSQL
-if "DEBUG" in os.environ:
+if "DEV":
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
