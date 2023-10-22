@@ -16,7 +16,8 @@ Briefly describe your project and its purpose.
     - [Database](#database)
       - [*Database schema*](#database-schema)
     - [API Documentation](#api-documentation)
-      - [*CRUD tables*](#crud-tables)
+      - [CRUD table](#crud-table)
+      - [API endpoint and values](#api-endpoint-and-values)
       - [*Listings*](#listings)
       - [*Filter and Search*](#filter-and-search)
       - [*Save listing*](#save-listing)
@@ -152,7 +153,35 @@ Enhance your listing's visibility with our custom sorting algorithm! Listings wi
 
 This Provides documentation on the available endpoints, request/response formats, and authentication methods. 
 
-#### *CRUD tables*
+#### CRUD table
+
+| ||Resources | |
+|:----|:----|:----|:----|
+|Method|ACCOUNTS|LISTINGS|FAVORITES
+|create/POST|✓|✓|✓|
+|retrive/ GET|✓|✓|✓|
+|update/ PUT|✓|✓|x|
+|destroy/ DELETE|x|✓|✓|
+|list/GET|✓|✓|✓|
+|search/GET|x|✓|x|
+
+
+
+#### API endpoint and values
+
+- #### *Authentication*
+
+|Operation|Method|Endpoint|Expected Value|
+|:----|:----|:----|:----|
+|Registration|POST|api/create/|email, username, password, first_name|
+|Login|POST|api-auth/login/|username, password|
+|Logout|POST|api-auth/logout/|(No specific request data expected)|
+|User Detail|GET|api/users/int:pk/|email, username, first_name, last_name, created_at, updated_at, image|
+|Current User|GET|api/currentUser/|email, username, first_name, last_name, created_at, updated_at, image, is_current_user|
+|User List|GET|api/users/| |
+|Access Token|POST|api-auth/token/|Authorization code|
+|Refresh Token|POST|api-auth/convert-token|Refresh token|
+
 
 #### *Listings*
 
