@@ -65,7 +65,7 @@ INSTALLED_APPS = [
     # Project Apps
     "accounts",
     "listings",
-    "favorites"
+    "favorites",
 ]
 
 SITE_ID = 1
@@ -144,11 +144,16 @@ MIDDLEWARE = [
 ROOT_URLCONF = "drf_api.urls"
 
 if DEV:
-    ALLOWED_HOSTS = ["8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu105.gitpod.io"]
+    ALLOWED_HOSTS = [
+        "8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu105.gitpod.io",
+        "localhost",
+    ]
 else:
-    ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(',')
+    ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
 
-CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS", "").split(',')
+CSRF_TRUSTED_ORIGINS = os.environ.get(
+    "CSRF_TRUSTED_ORIGINS", ""
+).split(",")
 
 CLIENT_ALLOWED_ORIGIN = os.environ.get("CLIENT_ORIGIN")
 
@@ -222,7 +227,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-PHONENUMBER_DEFAULT_REGION = 'LK'
+PHONENUMBER_DEFAULT_REGION = "LK"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
