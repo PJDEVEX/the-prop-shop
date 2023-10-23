@@ -9,7 +9,7 @@ urlpatterns = [
         "favorites/<int:pk>/", views.FavoriteRetrieveDestroy.as_view()
     ),
     path(
-        "user_favorites/",
+        "user-favorites/",
         views.UserFavoriteListView.as_view(),
         name="user-favorites",
     ),
