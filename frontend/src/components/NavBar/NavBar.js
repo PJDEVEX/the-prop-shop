@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import logo_white_bg from "../assets/logo_white_bg.png";
-import styles from "../styles/NavBar.module.css";
+import logo_white_bg from '../../assets/logo_white_bg.png';
+import styles from "./NavBar.module.css";
 import { NavLink } from "react-router-dom";
 
 const NavBar = () => {

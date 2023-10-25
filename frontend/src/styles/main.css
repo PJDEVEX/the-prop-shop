@@ -1,0 +1,104 @@
+/* Import the Google Fonts CSS */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400&family=Merriweather:wght@400;700&display=swap");
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: #f8f8f8;
+  min-height: 100vh;
+}
+
+.Main {
+  padding-top: 81px;
+}
+
+.Content {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 2px;
+  border: 1px solid #dadadf;
+}
+
+.FillerImage {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.Image {
+  max-height: 40vh;
+  max-width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #555555;
+  transition: color ease-in-out 0.3s;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:hover i {
+  color: #2142b2;
+  transition: color ease-in-out 0.3s;
+}
+
+input[type=file] {
+  display: none;
+}
+
+i {
+  color: #cfced3;
+  font-size: 1.6rem;
+  padding: 7px;
+  vertical-align: middle;
+}
+
+i:hover {
+  cursor: pointer;
+  transition: color ease-in-out 0.3s;
+  color: #2142b2;
+}
+
+figure {
+  text-align: center;
+  display: inline-block;
+}
+
+/* scrollbar */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+h1 {
+  font-family: "Merriweather", serif;
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-family: "Merriweather", serif;
+  font-size: 2rem;
+}
+
+h3 {
+  font-family: "Merriweather", serif;
+  font-size: 1.5rem;
+}/*# sourceMappingURL=main.css.map */
