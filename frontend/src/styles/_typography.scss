@@ -1,0 +1,26 @@
+@import 'variables';
+@import 'mixins';
+
+
+h1, h2, h3, h4, h5, h6 {
+    @include headerTagStyle;
+  }
+  
+  h1 {
+    font-size: $font-size-h1;
+  }
+  
+  h2 {
+    font-size: $font-size-h2;
+  }
+  
+  h3 {
+    font-size: $font-size-h3;
+  }
+  
+  p {
+    font-family: $font-family-main;
+    font-size: $font-size-p;
+    line-height: $line-height-text;
+  }
+  

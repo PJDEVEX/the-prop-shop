@@ -1,5 +1,5 @@
 .NavBar {
-  background-color: #fff;
+  background-color: #FFFFFF;
   border: 1px solid #dadadf;
 }
 
@@ -8,5 +8,5 @@
 }
 
 .Active i {
-  color: #2142b2;
+  color: #007BFF;
 }/*# sourceMappingURL=NavBar.module.css.map */

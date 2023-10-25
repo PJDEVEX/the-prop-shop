@@ -1,9 +1,13 @@
+@import 'variables';
+@import 'mixins';
+@import 'typography';
+
 /* Import the Google Fonts CSS */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400&family=Merriweather:wght@400;700&display=swap');
 
 body {
     font-family: 'Raleway', sans-serif;
-    background-color: #f8f8f8;
+    background-color: $background-color;
     min-height: 100vh;
 }
 
@@ -12,10 +16,10 @@ body {
 }
 
 .Content {
-    background-color: #ffffff;
+    background-color: $background-color; // Use the light background color
     padding: 10px;
     border-radius: 2px;
-    border: 1px solid #dadadf;
+    border: 1px solid $secondary-color; // Use the light secondary color for the border
 }
 
 .FillerImage {
@@ -35,8 +39,9 @@ body {
 }
 
 a {
-    color: #555555;
+    color: $text-color; // Use the light text color
     transition: color ease-in-out 0.3s;
+    
 }
 
 a:hover {
@@ -44,7 +49,7 @@ a:hover {
 }
 
 a:hover i {
-    color: #2142b2;
+    color: $primary-color; 
     transition: color ease-in-out 0.3s;
 }
 
@@ -53,8 +58,8 @@ input[type="file"] {
 }
 
 i {
-    color: #cfced3;
-    font-size: 1.6rem;
+    color: $secondary-color; 
+    font-size: $font-size-p;
     padding: 7px;
     vertical-align: middle;
 }
@@ -62,7 +67,7 @@ i {
 i:hover {
     cursor: pointer;
     transition: color ease-in-out 0.3s;
-    color: #2142b2;
+    color: $primary-color; 
 }
 
 figure {
@@ -75,26 +80,11 @@ figure {
     width: 5px;
 }
 *::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: $background-color; 
 }
 *::-webkit-scrollbar-thumb {
-    background: #888;
+    background: $secondary-color; 
 }
 *::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
-h1 {
-    font-family: 'Merriweather', serif;
-    font-size: 2.5rem;
-}
-
-h2 {
-    font-family: 'Merriweather', serif;
-    font-size: 2rem;
-}
-
-h3 {
-    font-family: 'Merriweather', serif;
-    font-size: 1.5rem;
+    background: $text-color; 
 }

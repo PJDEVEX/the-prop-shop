@@ -1,8 +1,31 @@
-/* Import the Google Fonts CSS */
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400&family=Merriweather:wght@400;700&display=swap");
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Merriweather", serif;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Import the Google Fonts CSS */
 body {
   font-family: "Raleway", sans-serif;
-  background-color: #f8f8f8;
+  background-color: #FFFFFF;
   min-height: 100vh;
 }
 
@@ -11,10 +34,10 @@ body {
 }
 
 .Content {
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   padding: 10px;
   border-radius: 2px;
-  border: 1px solid #dadadf;
+  border: 1px solid #E5E5E5;
 }
 
 .FillerImage {
@@ -36,7 +59,7 @@ body {
 }
 
 a {
-  color: #555555;
+  color: #333333;
   transition: color ease-in-out 0.3s;
 }
 
@@ -45,7 +68,7 @@ a:hover {
 }
 
 a:hover i {
-  color: #2142b2;
+  color: #007BFF;
   transition: color ease-in-out 0.3s;
 }
 
@@ -54,8 +77,8 @@ input[type=file] {
 }
 
 i {
-  color: #cfced3;
-  font-size: 1.6rem;
+  color: #E5E5E5;
+  font-size: 16px;
   padding: 7px;
   vertical-align: middle;
 }
@@ -63,7 +86,7 @@ i {
 i:hover {
   cursor: pointer;
   transition: color ease-in-out 0.3s;
-  color: #2142b2;
+  color: #007BFF;
 }
 
 figure {
@@ -77,28 +100,13 @@ figure {
 }
 
 *::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #FFFFFF;
 }
 
 *::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #E5E5E5;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-h1 {
-  font-family: "Merriweather", serif;
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-family: "Merriweather", serif;
-  font-size: 2rem;
-}
-
-h3 {
-  font-family: "Merriweather", serif;
-  font-size: 1.5rem;
+  background: #333333;
 }/*# sourceMappingURL=main.css.map */

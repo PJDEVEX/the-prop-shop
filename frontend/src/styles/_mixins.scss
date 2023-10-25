@@ -1,0 +1,6 @@
+@import 'variables';
+
+@mixin headerTagStyle {
+    font-family: $font-family-heading;
+    font-weight: $font-weight-normal;
+}
