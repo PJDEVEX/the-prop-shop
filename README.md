@@ -27,7 +27,8 @@ Briefly describe your project and its purpose.
   - [Frontend](#frontend)
     - [Libraries](#libraries)
     - [Enhanced User Experience with React](#enhanced-user-experience-with-react)
-    - [Color mood](#color-mood)
+    - [Color Palette - Color mood](#color-palette---color-mood)
+      - [*Why dark-mode?*](#why-dark-mode)
     - [Code Quality and Consistency](#code-quality-and-consistency)
     - [Code Linters](#code-linters)
 - [Getting Started](#getting-started)
@@ -240,14 +241,24 @@ Describe the technologies, libraries, and frameworks used in the frontend of you
 
 ### Libraries
 
-
-| No | Library | Specific use in the application | Justification |
+| No | Library | Specific Use in the Application | Justification |
 | --- | --- | --- | --- |
-| 2 | [ES7+ React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets) | Extensions for React, React-Native, and Redux in JS/TS with ES7+ syntax. Customizable. Built-in integration with prettier. | Enhances development workflow and code quality by providing useful code snippets and integration with prettier for consistent code formatting. |
-| 3 | [React Bootstrap](https://react-bootstrap.netlify.app/) | The most popular front-end framework, rebuilt for React. | Provides a collection of pre-designed UI components for React applications, helping to create responsive and aesthetically pleasing designs. |
-| 4 | [Google Fonts](https://fonts.google.com/) | Computer font and web font service owned by Google. | Offers a wide selection of web fonts to enhance the typography and visual appeal of the application. |
-| 5 | [Font Awesome](https://fontawesome.com/) | Internet's icon library and toolkit. | Simplifies the addition of high-quality icons and symbols to the application for improved user interface and user experience. |
-| 6 | [React Router Dom](https://www.npmjs.com/package/react-router-dom) | Package contains bindings for using React Router in web applications. | It enables client-side routing in React apps, making single-page applications (SPAs) with multiple views and URLs possible. |
+| 1 | [![React](https://img.shields.io/badge/React-v17.0.2-blue?logo=react&style=flat)](https://reactjs.org/) | Building the frontend user interface | React is a popular and efficient JavaScript library for building user interfaces. It offers a component-based architecture and helps create interactive and responsive web applications. |
+| 2 | [![React Router](https://img.shields.io/badge/React%20Router-v5.3.4-green?logo=react-router&style=flat)](https://reactrouter.com/) | Handling client-side routing | React Router is a widely used library for managing application routing in React applications. It allows for navigation and keeps the UI in sync with the URL. |
+| 3 | [![Axios](https://img.shields.io/badge/Axios-v0.21.4-yellow?logo=axios&style=flat)](https://axios-http.com/) | Making HTTP requests | Axios is a popular JavaScript library for making asynchronous HTTP requests to your server. It simplifies data retrieval and manipulation. |
+| 4 | [![Sass](https://img.shields.io/badge/Sass-v1.69.4-pink?logo=sass&style=flat)](https://sass-lang.com/) | Styling with CSS pre-processing | Sass is used to enhance the styling of the application by providing features like variables, nesting, and modularity in CSS. |
+| 5 | [ES7+ React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets) | Extensions for React, React-Native, and Redux in JS/TS with ES7+ syntax. Customizable. Built-in integration with prettier. | Enhances development workflow and code quality by providing useful code snippets and integration with prettier for consistent code formatting. |
+| 6 | [React Bootstrap - 5.3.0](https://react-bootstrap.netlify.app/) | The most popular front-end framework, rebuilt for React. | Provides a collection of pre-designed UI components for React applications, helping to create responsive and aesthetically pleasing designs. |
+| 7 | [![Google Fonts](https://img.shields.io/badge/Google%20Fonts-v1.0.0-blue?logo=google-fonts)](https://fonts.google.com/) | Computer font and web font service owned by Google. | Offers a wide selection of web fonts to enhance the typography and visual appeal of the application. |
+| 8 | [![Font Awesome](https://img.shields.io/badge/Font%20Awesome-v6.3.0-blue?logo=font-awesome)](https://fontawesome.com/) | Internet's icon library and toolkit. | Simplifies the addition of high-quality icons and symbols to the application for improved user interface and user experience. |
+| 9 | [![Live Sass Compiler](https://img.shields.io/badge/Live%20Sass%20Compiler-v3.0.0-blue?)](https://ritwickdey.github.io/vscode-live-sass-compiler/) | Compile Sass or Scss to CSS at realtime with live browser reload. | VSCode Extension that help you to compile/transpile your SASS/SCSS files to CSS files at realtime with live browser reload. |
+
+
+
+
+
+
+
 
 
 
@@ -271,7 +282,40 @@ how the use of a React library and/or implemented feature has contributed to imp
 |12|Third-Party Libraries|The extensive React ecosystem has enabled us to integrate third-party libraries seamlessly, <br>enhancing the capabilities of our application and further enriching the user experience.|
 
 
-### Color mood
+### Color Palette - Color mood
+
+Here are the color themes for the site:
+
+
+<details>
+  <summary>Light Mode</summary>
+
+  | Color Usage       | Color Sample                                       | Hex Code  | Description      |
+  | ----------------- | ------------------------------------------------- | --------- | ----------------- |
+  | Background Color  | ![Color](https://via.placeholder.com/100/FFFFFF/000000?text=+) | `#FFFFFF` | White            |
+  | Primary Color     | ![Color](https://via.placeholder.com/100/007BFF/000000?text=+) | `#007BFF` | Blue             |
+  | Secondary Color   | ![Color](https://via.placeholder.com/100/E5E5E5/000000?text=+) | `#E5E5E5` | Light Gray       |
+  | Text Color        | ![Color](https://via.placeholder.com/100/333333/FFFFFF?text=+) | `#333333` | Dark Gray        |
+  | Highlight Color   | ![Color](https://via.placeholder.com/100/FFC107/000000?text=+) | `#FFC107` | Amber            |
+</details>
+
+<details>
+  <summary>Dark Mode</summary>
+
+  | Color Usage       | Color Sample                                       | Hex Code  | Description      |
+  | ----------------- | ------------------------------------------------- | --------- | ----------------- |
+  | Background Color  | ![Color](https://via.placeholder.com/100/1E1E1E/FFFFFF?text=+) | `#1E1E1E` | Almost Black     |
+  | Primary Color     | ![Color](https://via.placeholder.com/100/2196F3/FFFFFF?text=+) | `#2196F3` | Royal Blue       |
+  | Secondary Color   | ![Color](https://via.placeholder.com/100/303030/FFFFFF?text=+) | `#303030` | Dark Gray        |
+  | Text Color        | ![Color](https://via.placeholder.com/100/FFFFFF/000000?text=+) | `#FFFFFF` | White            |
+  | Highlight Color   | ![Color](https://via.placeholder.com/100/FFD600/000000?text=+) | `#FFD600` | Yellow           |
+</details>
+
+#### *Why dark-mode?*
+- Reduces eye strain, enhances viewing in low-light conditions for comfort.
+- Extends OLED/AMOLED device battery life through power-efficient dark pixels.
+- Improves readability, minimizes blue light emission for better nighttime reading.
+- Offers stylish aesthetics, aligns with modern design preferences, enhances user engagement.
 
 ### Code Quality and Consistency
 
@@ -322,6 +366,12 @@ By evaluating and comparing the features, performance, and user experience of La
 10. [django.contrib.humanize](https://docs.djangoproject.com/en/4.2/ref/contrib/humanize/#intcomma)
 11. [MERN Stack Project: Build a Modern Real Estate Marketplace with react MERN (jwt, redux toolkit)](https://github.com/sahandghavidel/mern-estate/blob/main/client/src/App.jsx)
 12. [https://estate.100jsprojects.com/](https://estate.100jsprojects.com/)
+13. [OhSnap! Sass Folder Structure For React](https://dev.to/gedalyakrycer/ohsnap-sass-folder-structure-for-react-483e)
+14. [how to simply style in scss so that multiple elements will use same style](https://stackoverflow.com/questions/52852979/how-to-simply-style-in-scss-so-that-multiple-elements-will-use-same-style)
+15. [A Simple SCSS Architecture, and Best Practice Playbook](https://matthewelsom.com/blog/simple-scss-playbook.html)
+16. [React and Sass Tutorial - Intro to SASS](https://www.youtube.com/watch?v=kpcjSaRngg8)
+17. [SASS Tutorial (Build Your Own CSS Library)](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jxJX7vojNVK-o8ubDZEcNb)
+18. 
 
 ### Tools used
 
@@ -332,7 +382,9 @@ By evaluating and comparing the features, performance, and user experience of La
 |3| [Canva](https://www.canva.com/) | free-to-use online graphic design tool. |
 |4| [Removebg](https://www.remove.bg/) | Remove Image Background |
 |5| [favicon](https://favicon.io/favicon-converter/) | Generate favicon from an image |
-|6 |[]()
+|6 |[Adobe Color](https://color.adobe.com/) | A web app where you can create and share color themes|
+
+
 
 
 

@@ -2,9 +2,11 @@
 @import 'mixins';
 @import 'typography';
 
-/* Import the Google Fonts CSS */
+/* Google Fonts CSS */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400&family=Merriweather:wght@400;700&display=swap');
 
+/* Bootstrap*/
+@import '~bootstrap/scss/bootstrap';
 body {
     font-family: 'Raleway', sans-serif;
     background-color: $background-color;
