@@ -5,12 +5,19 @@
 /* Google Fonts CSS */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400&family=Merriweather:wght@400;700&display=swap');
 
-/* Bootstrap*/
-@import '~bootstrap/scss/bootstrap';
+/* Bootstrap */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
 body {
     font-family: 'Raleway', sans-serif;
     background-color: $background-color;
+    color: $text-color;
     min-height: 100vh;
+
+    &.dark-mode {
+        background-color: $dark-background-color;
+        color: $dark-text-color;
+    }
 }
 
 .Main {

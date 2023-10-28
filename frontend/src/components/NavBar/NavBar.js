@@ -3,6 +3,8 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import logo_white_bg from '../../assets/logo_white_bg.png';
 import styles from "./NavBar.module.css";
 import { NavLink } from "react-router-dom";
+import ColorModeToggle from "../ColorModeToggle"
+
 
 const NavBar = () => {
   return (
@@ -14,7 +16,7 @@ const NavBar = () => {
             <img src={logo_white_bg} alt="the prop shop logo" height="60px" />
           </Navbar.Brand>
         </NavLink>
-
+      
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-left">
@@ -47,8 +49,11 @@ const NavBar = () => {
             to="/user-favorites/">
               <i className="fa-solid fa-heart"></i>My Favorites
             </NavLink>
+            
+            
           </Nav>
         </Navbar.Collapse>
+        <ColorModeToggle />
       </Container>
     </Navbar>
   );

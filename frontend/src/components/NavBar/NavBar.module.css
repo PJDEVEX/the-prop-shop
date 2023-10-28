@@ -1,6 +1,6 @@
 .NavBar {
   background-color: #FFFFFF;
-  border: 1px solid #dadadf;
+  border: 1px solid #FFFFFF;
 }
 
 .NavLink {
@@ -9,4 +9,9 @@
 
 .Active i {
   color: #007BFF;
+}
+
+.dark-mode {
+  background-color: #1E1E1E;
+  color: #FFFFFF;
 }/*# sourceMappingURL=NavBar.module.css.map */

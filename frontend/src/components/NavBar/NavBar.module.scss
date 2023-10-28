@@ -2,7 +2,7 @@
 
 .NavBar {
     background-color: $background-color;
-    border: 1px solid #dadadf;
+    border: 1px solid $background-color;
 }
 
 .NavLink {
@@ -12,3 +12,8 @@
 .Active i {
     color: $primary-color;
 }
+
+.dark-mode {
+    background-color: $dark-background-color;
+    color: $dark-text-color;
+  }
