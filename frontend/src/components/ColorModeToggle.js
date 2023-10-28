@@ -1,17 +1,16 @@
 import React from 'react';
-import { useColorMode } from '../contexts/ColorModeContext';
+import { useColorModeContext } from '../contexts/ColorModeContext';
 import '@theme-toggles/react/css/Classic.css';
 import { Classic } from '@theme-toggles/react';
 
 const ColorModeToggle = () => {
-  const { isDarkMode, toggleColorMode } = useColorMode();
+  const { isDarkMode, toggleColorMode } = useColorModeContext();
 
   const handleToggleClick = () => {
     toggleColorMode();
   };
 
   console.log('isDarkMode:', isDarkMode);
-
 
   return (
     <Classic
