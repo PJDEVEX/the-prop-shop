@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import logo_white_bg from '../../assets/logo_white_bg.png';
+import logo from "../../assets/logo.png";
 import styles from "./NavBar.module.css";
 import { NavLink } from "react-router-dom";
 import ColorModeToggle from "../ColorModeToggle"
@@ -13,7 +13,7 @@ const NavBar = () => {
         {/* NavLink to the Home page when click logo */}
         <NavLink to="/">
           <Navbar.Brand>
-            <img src={logo_white_bg} alt="the prop shop logo" height="60px" />
+            <img src={logo} alt="the prop shop logo" height="60px" />
           </Navbar.Brand>
         </NavLink>
       
