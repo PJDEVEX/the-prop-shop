@@ -253,6 +253,15 @@ Describe the technologies, libraries, and frameworks used in the frontend of you
 | 8 | [![Font Awesome](https://img.shields.io/badge/Font%20Awesome-v6.3.0-blue?logo=font-awesome)](https://fontawesome.com/) | Internet's icon library and toolkit. | Simplifies the addition of high-quality icons and symbols to the application for improved user interface and user experience. |
 | 9 | [![Live Sass Compiler](https://img.shields.io/badge/Live%20Sass%20Compiler-v3.0.0-blue?)](https://ritwickdey.github.io/vscode-live-sass-compiler/) | Compile Sass or Scss to CSS at realtime with live browser reload. | VSCode Extension that help you to compile/transpile your SASS/SCSS files to CSS files at realtime with live browser reload. |
 
+10. npm install @theme-toggles/react
+11. react-toggle - 4.1.3- https://www.npmjs.com/package/react-toggle - 
+12. react-responsive - 9.0.2 - https://www.npmjs.com/package/react-responsive
+13. npm install use-persisted-state
+14. npm install react @theme-toggles/react - https://toggles.dev/about
+
+
+
+
 
 
 
