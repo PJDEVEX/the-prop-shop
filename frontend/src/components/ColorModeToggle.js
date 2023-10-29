@@ -21,6 +21,7 @@ const ColorModeToggle = () => {
       toggled={isDarkMode}
       onToggle={handleToggleClick}
       className='btn btn-lg'
+      data-bs-theme="dark"
     />
   );
 };
