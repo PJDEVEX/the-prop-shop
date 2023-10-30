@@ -10,13 +10,13 @@
 
 body {
     font-family: 'Raleway', sans-serif;
-    background-color: $background-color;
-    color: $text-color;
+    background-color: $light-bg-primary-color;
+    color: $light-text-primary-color;
     min-height: 100vh;
 
     &.dark-mode {
-        background-color: $dark-background-color;
-        color: $dark-text-color;
+        background-color: $dark-bg-primary-color;
+        color: $dark-text-primary-color;
     }
 }
 
@@ -25,10 +25,15 @@ body {
 }
 
 .Content {
-    background-color: $background-color; // Use the light background color
+    background-color: $light-bg-primary-color; 
     padding: 10px;
     border-radius: 2px;
-    border: 1px solid $secondary-color; // Use the light secondary color for the border
+    border: 1px solid $light-bg-secondary-color;
+
+    &.dark-mode {
+        background-color: $dark-bg-primary-color;
+        border: 1px solid $dark-bg-secondary-color;
+    }
 }
 
 .FillerImage {
@@ -48,18 +53,33 @@ body {
 }
 
 a {
-    color: $text-color; // Use the light text color
+    color: $light-text-secondary-color;
     transition: color ease-in-out 0.3s;
+    text-decoration-line: none;
+    text-shadow: 2cap;
+
+    &.dark-mode {
+        color: $dark-text-secondary-color;
+    }
     
 }
 
 a:hover {
+    color: $light-text-secondary-color; 
     text-decoration: none;
+
+    &.dark-mode {
+        color: $dark-text-secondary-color;
+    }
 }
 
 a:hover i {
-    color: $primary-color; 
+    color: $light-brand-primary-color; 
     transition: color ease-in-out 0.3s;
+
+    &.dark-mode {
+        color: $dark-brand-primary-color;
+    }
 }
 
 input[type="file"] {
@@ -67,16 +87,25 @@ input[type="file"] {
 }
 
 i {
-    color: $secondary-color; 
+    // color: $light-brand-secondary-color; 
     font-size: $font-size-p;
     padding: 7px;
     vertical-align: middle;
+
+    &.dark-mode {
+        // color: $dark-brand-secondary-color;
+    }
 }
 
 i:hover {
     cursor: pointer;
     transition: color ease-in-out 0.3s;
-    color: $primary-color; 
+    color: $light-brand-secondary-color;
+    
+    &.dark-mode {
+        color: $dark-brand-secondary-color;
+    }
+    
 }
 
 figure {
@@ -89,11 +118,11 @@ figure {
     width: 5px;
 }
 *::-webkit-scrollbar-track {
-    background: $background-color; 
+    background: $light-bg-primary-color; 
 }
 *::-webkit-scrollbar-thumb {
-    background: $secondary-color; 
+    background: $light-bg-secondary-color; 
 }
 *::-webkit-scrollbar-thumb:hover {
-    background: $text-color; 
+    background: $light-text-primary-color; 
 }

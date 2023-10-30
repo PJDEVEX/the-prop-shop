@@ -29,33 +29,34 @@ const NavBar = () => {
             className="ms-auto text-start align-items-end"
           >
             <NavLink
-              className={styles.NavLink}
-              activeClassName={styles.Active}
+              className={`${styles.NavLink} ${isDarkMode ? styles["dark-mode"] : styles["light-mode"]}`}
+              activeClassName={`${styles.Active} ${isDarkMode ? styles["dark-mode"] : styles["light-mode"]}`}
+              data-bs-theme={isDarkMode ? "dark" : "light"}
               to="/"
               exact
             >
               <i className="fas fa-home"></i>Home
             </NavLink>
             <NavLink
-              className={styles.NavLink}
-              activeClassName={styles.Active}
+              className={`${styles.NavLink} ${isDarkMode ? styles["dark-mode"] : styles["light-mode"]}`}
+              activeClassName={`${styles.Active} ${isDarkMode ? styles["dark-mode"] : styles["light-mode"]}`}
               to="/login"
             >
               <i className="fas fa-sign-in-alt"></i>Sign in
             </NavLink>
             <NavLink
-              className={styles.NavLink}
-              activeClassName={styles.Active}
+              className={`${styles.NavLink} ${isDarkMode ? styles["dark-mode"] : styles["light-mode"]}`}
+              activeClassName={`${styles.Active} ${isDarkMode ? styles["dark-mode"] : styles["light-mode"]}`}
               to="/create"
             >
               <i className="fas fa-user-plus"></i>Sign up
             </NavLink>
             <NavLink
-              className={styles.NavLink}
-              activeClassName={styles.Active}
+              className={`${styles.NavLink} ${isDarkMode ? styles["dark-mode"] : styles["light-mode"]}`}
+              activeClassName={`${styles.Active} ${isDarkMode ? styles["dark-mode"] : styles["light-mode"]}`}
               to="/user-favorites/"
             >
-              <i class="fa-solid fa-heart"></i>
+              <i className="fa-solid fa-heart"></i>
               My Favorite
             </NavLink>
             <ColorModeToggle></ColorModeToggle>

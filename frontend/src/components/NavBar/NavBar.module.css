@@ -1,21 +1,53 @@
 /* For Light Mode */
 .NavBar.light-mode {
   background-color: #FFFFFF;
-  color: #333333;
+  color: #000000;
   border: 1px solid #FFFFFF;
 }
 
 /* For Dark Mode */
 .NavBar.dark-mode {
-  background-color: #1E1E1E;
+  background-color: #000000;
   color: #FFFFFF;
-  border: 1px solid #1E1E1E;
+  border: 1px solid #000000;
 }
 
-.NavLink {
-  padding: 5px;
+.NavLink.light-mode {
+  padding: 10px;
+  color: #CCCCCC;
 }
 
-.Active i {
-  color: #007BFF;
+.NavLink.dark-mode {
+  padding: 10px;
+  color: #D3D3D3;
+}
+
+.NavLink.light-mode:hover {
+  color: #000000;
+  background-color: #D3D3D3;
+  border-radius: 9999px;
+}
+
+.NavLink.dark-mode:hover {
+  color: #FFFFFF;
+  background-color: #363636;
+  border-radius: 9999px;
+}
+
+.NavLink.light-mode:active {
+  color: #000000;
+  font-weight: bold;
+}
+
+.NavLink.dark-mode:active {
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.Active.light-mode i {
+  color: #094ba3;
+}
+
+.Active.dark-mode i {
+  color: #094ba3;
 }/*# sourceMappingURL=NavBar.module.css.map */

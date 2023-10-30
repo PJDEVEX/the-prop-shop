@@ -2,24 +2,56 @@
 
 /* For Light Mode */
 .NavBar.light-mode {
-    background-color: $background-color;
-    color: $text-color; 
-    border: 1px solid $background-color;
-  }
-  
-  /* For Dark Mode */
-  .NavBar.dark-mode {
-    background-color: $dark-background-color;
-    color: $dark-text-color;
-    border: 1px solid $dark-background-color;
-    
-  }
-  
-
-.NavLink {
-    padding: 5px;
+  background-color: $light-bg-primary-color;
+  color: $light-text-primary-color;
+  border: 1px solid $light-bg-primary-color;
 }
 
-.Active i {
-    color: $primary-color;
+/* For Dark Mode */
+.NavBar.dark-mode {
+  background-color: $dark-bg-primary-color;
+  color: $dark-text-primary-color;
+  border: 1px solid $dark-bg-primary-color;
+
+}
+
+.NavLink.light-mode {
+  padding: 10px;
+  color: $light-text-secondary-color;
+}
+
+.NavLink.dark-mode {
+  padding: 10px;
+  color: $dark-text-secondary-color;
+}
+
+.NavLink.light-mode:hover {
+  color:$light-text-primary-color;
+  background-color: $light-bg-secondary-color;
+  border-radius:9999px;
+}
+
+.NavLink.dark-mode:hover {
+  color: $dark-text-primary-color;
+  background-color: $dark-bg-secondary-color;
+  border-radius:9999px;
+}
+
+.NavLink.light-mode:active {
+  color:$light-text-primary-color;
+  font-weight: bold;
+}
+
+.NavLink.dark-mode:active {
+  color: $dark-text-primary-color;
+  font-weight: bold;
+  
+}
+
+.Active.light-mode i {
+  color: $light-brand-primary-color;
+}
+
+.Active.dark-mode i {
+  color: $dark-brand-primary-color;
 }
