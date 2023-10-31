@@ -258,6 +258,9 @@ Describe the technologies, libraries, and frameworks used in the frontend of you
 12. react-responsive - 9.0.2 - https://www.npmjs.com/package/react-responsive
 13. npm install use-persisted-state
 14. npm install react @theme-toggles/react - https://toggles.dev/about
+15. "react-google-login": "^5.2.2" - https://www.npmjs.com/package/react-google-login
+16. react-facebook-login": "^4.1.1" - https://www.npmjs.com/package/react-facebook-login
+17. 
 
 
 
