@@ -1,53 +1,183 @@
-/* For Light Mode */
-.NavBar.light-mode {
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400&family=Merriweather:wght@400;700&display=swap");
+@import '~bootstrap/dist/css/bootstrap.min.css';
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Merriweather", serif;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Google Fonts CSS */
+/* Bootstrap */
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: #FFFFFF;
+  color: #000000;
+  min-height: 100vh;
+}
+body.dark {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.Main {
+  padding-top: 81px;
+}
+
+.Content {
+  background-color: #FFFFFF;
+  padding: 10px;
+  border-radius: 2px;
+  border: 1px solid #D3D3D3;
+}
+.Content.dark {
+  background-color: #000000;
+  border: 1px solid #363636;
+}
+
+.FillerImage {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.Image {
+  max-height: 40vh;
+  max-width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #CCCCCC;
+  transition: color ease-in-out 0.3s;
+  text-decoration-line: none;
+  text-shadow: 2cap;
+}
+a.dark {
+  color: #D3D3D3;
+}
+
+a:hover {
+  color: #CCCCCC;
+  text-decoration: none;
+}
+a:hover.dark {
+  color: #D3D3D3;
+}
+
+a:hover i {
+  color: #094ba3;
+  transition: color ease-in-out 0.3s;
+}
+a:hover i.dark {
+  color: #094ba3;
+}
+
+input[type=file] {
+  display: none;
+}
+
+i {
+  font-size: 16px;
+  padding: 7px;
+  vertical-align: middle;
+}
+i:hover {
+  cursor: pointer;
+  transition: color ease-in-out 0.3s;
+  color: #ff66c4;
+}
+i:hover.dark {
+  color: #ff66c4;
+}
+
+figure {
+  text-align: center;
+  display: inline-block;
+}
+
+/* scrollbar */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #FFFFFF;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #D3D3D3;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
+
+.NavBar {
   background-color: #FFFFFF;
   color: #000000;
   border: 1px solid #FFFFFF;
 }
-
-/* For Dark Mode */
-.NavBar.dark-mode {
+.NavBar.dark {
   background-color: #000000;
   color: #FFFFFF;
   border: 1px solid #000000;
 }
 
-.NavLink.light-mode {
+.NavLink {
   padding: 10px;
   color: #CCCCCC;
 }
-
-.NavLink.dark-mode {
+.NavLink.dark {
   padding: 10px;
   color: #D3D3D3;
 }
 
-.NavLink.light-mode:hover {
+.NavLink:hover {
   color: #000000;
   background-color: #D3D3D3;
   border-radius: 9999px;
 }
-
-.NavLink.dark-mode:hover {
+.NavLink:hover.dark {
   color: #FFFFFF;
   background-color: #363636;
   border-radius: 9999px;
 }
 
-.NavLink.light-mode:active {
+.NavLink:active {
   color: #000000;
   font-weight: bold;
 }
-
-.NavLink.dark-mode:active {
+.NavLink:active.dark {
   color: #FFFFFF;
   font-weight: bold;
 }
 
-.Active.light-mode i {
+.Active i {
   color: #094ba3;
 }
-
-.Active.dark-mode i {
+.Active i.dark {
   color: #094ba3;
 }/*# sourceMappingURL=NavBar.module.css.map */

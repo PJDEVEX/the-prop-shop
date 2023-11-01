@@ -14,7 +14,7 @@ body {
     color: $light-text-primary-color;
     min-height: 100vh;
 
-    &.dark-mode {
+    &.dark {
         background-color: $dark-bg-primary-color;
         color: $dark-text-primary-color;
     }
@@ -25,12 +25,12 @@ body {
 }
 
 .Content {
-    background-color: $light-bg-primary-color; 
+    background-color: $light-bg-primary-color;
     padding: 10px;
     border-radius: 2px;
     border: 1px solid $light-bg-secondary-color;
 
-    &.dark-mode {
+    &.dark {
         background-color: $dark-bg-primary-color;
         border: 1px solid $dark-bg-secondary-color;
     }
@@ -58,26 +58,26 @@ a {
     text-decoration-line: none;
     text-shadow: 2cap;
 
-    &.dark-mode {
+    &.dark {
         color: $dark-text-secondary-color;
     }
-    
+
 }
 
 a:hover {
-    color: $light-text-secondary-color; 
+    color: $light-text-secondary-color;
     text-decoration: none;
 
-    &.dark-mode {
+    &.dark {
         color: $dark-text-secondary-color;
     }
 }
 
 a:hover i {
-    color: $light-brand-primary-color; 
+    color: $light-brand-primary-color;
     transition: color ease-in-out 0.3s;
 
-    &.dark-mode {
+    &.dark {
         color: $dark-brand-primary-color;
     }
 }
@@ -92,7 +92,7 @@ i {
     padding: 7px;
     vertical-align: middle;
 
-    &.dark-mode {
+    &.dark {
         // color: $dark-brand-secondary-color;
     }
 }
@@ -101,11 +101,11 @@ i:hover {
     cursor: pointer;
     transition: color ease-in-out 0.3s;
     color: $light-brand-secondary-color;
-    
-    &.dark-mode {
+
+    &.dark {
         color: $dark-brand-secondary-color;
     }
-    
+
 }
 
 figure {
@@ -117,12 +117,15 @@ figure {
 *::-webkit-scrollbar {
     width: 5px;
 }
+
 *::-webkit-scrollbar-track {
-    background: $light-bg-primary-color; 
+    background: $light-bg-primary-color;
 }
+
 *::-webkit-scrollbar-thumb {
-    background: $light-bg-secondary-color; 
+    background: $light-bg-secondary-color;
 }
+
 *::-webkit-scrollbar-thumb:hover {
-    background: $light-text-primary-color; 
+    background: $light-text-primary-color;
 }

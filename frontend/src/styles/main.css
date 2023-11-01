@@ -31,7 +31,7 @@ body {
   color: #000000;
   min-height: 100vh;
 }
-body.dark-mode {
+body.dark {
   background-color: #000000;
   color: #FFFFFF;
 }
@@ -46,7 +46,7 @@ body.dark-mode {
   border-radius: 2px;
   border: 1px solid #D3D3D3;
 }
-.Content.dark-mode {
+.Content.dark {
   background-color: #000000;
   border: 1px solid #363636;
 }
@@ -75,7 +75,7 @@ a {
   text-decoration-line: none;
   text-shadow: 2cap;
 }
-a.dark-mode {
+a.dark {
   color: #D3D3D3;
 }
 
@@ -83,7 +83,7 @@ a:hover {
   color: #CCCCCC;
   text-decoration: none;
 }
-a:hover.dark-mode {
+a:hover.dark {
   color: #D3D3D3;
 }
 
@@ -91,7 +91,7 @@ a:hover i {
   color: #094ba3;
   transition: color ease-in-out 0.3s;
 }
-a:hover i.dark-mode {
+a:hover i.dark {
   color: #094ba3;
 }
 
@@ -109,7 +109,7 @@ i:hover {
   transition: color ease-in-out 0.3s;
   color: #ff66c4;
 }
-i:hover.dark-mode {
+i:hover.dark {
   color: #ff66c4;
 }
 

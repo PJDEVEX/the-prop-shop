@@ -4,15 +4,12 @@ import { BrowserRouter as Router } from "react-router-dom";
 import "./styles/main.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { ColorModeProvider } from "./contexts/ColorModeContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ColorModeProvider>
-      <Router>
-        <App />
-      </Router>
-    </ColorModeProvider>
+    <Router>
+      <App />
+    </Router>
   </React.StrictMode>,
 
   document.getElementById("root")

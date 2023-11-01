@@ -3,18 +3,32 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "../../assets/logo.png";
 import styles from "./NavBar.module.css";
 import { NavLink } from "react-router-dom";
-import ColorModeToggle from "../ColorModeToggle";
-import { useColorModeContext } from "../../contexts/ColorModeContext";
+import ColorModeToggle from "../DarkModeToggle";
+import { useColorScheme } from '../../hooks/useColorScheme';
 
 const NavBar = () => {
-  const { isDarkMode } = useColorModeContext();
+  
+  const { isDark } = useColorScheme();
+
+    // Apply the 'dark' class to the Navbar component conditionally
+    const navBarClasses = `${styles.NavBar} ${isDark ? styles["dark"] : styles}`;
+    console.log("Dark-navBarClasses:", isDark)
+
+    // Apply the 'dark' class to the NavLink component conditionally
+    const navLinkClasses = `${styles.NavLink} ${isDark ? styles["dark"] : styles}`;
+    console.log("Dark-navLinkClasses:", isDark)
+    
+    // Apply the 'dark' class to the NavLink component conditionally
+    const navLinkActiveClasses = `${styles.Active} ${isDark ? styles["dark"] : styles}`;
+    console.log("Dark-navLinkActiveClasses:", isDark)
+
 
   return (
     <Navbar
       expand="md"
-      fixed="top"
-      data-bs-theme={isDarkMode ? "dark" : "light"}
-      className={`${styles.NavBar} ${isDarkMode ? styles["dark-mode"] : styles["light-mode"]}`}
+      sticky="top"
+      data-bs-theme="dark"
+      className={navBarClasses}
 
     >
       <Container>
@@ -29,31 +43,31 @@ const NavBar = () => {
             className="ms-auto text-start align-items-end"
           >
             <NavLink
-              className={`${styles.NavLink} ${isDarkMode ? styles["dark-mode"] : styles["light-mode"]}`}
-              activeClassName={`${styles.Active} ${isDarkMode ? styles["dark-mode"] : styles["light-mode"]}`}
-              data-bs-theme={isDarkMode ? "dark" : "light"}
+              className={navLinkClasses}
+              activeClassName= {navLinkActiveClasses}
+              data-bs-theme="dark"
               to="/"
               exact
             >
               <i className="fas fa-home"></i>Home
             </NavLink>
             <NavLink
-              className={`${styles.NavLink} ${isDarkMode ? styles["dark-mode"] : styles["light-mode"]}`}
-              activeClassName={`${styles.Active} ${isDarkMode ? styles["dark-mode"] : styles["light-mode"]}`}
+              className={navLinkClasses}
+              activeClassName= {navLinkActiveClasses}
               to="/login"
             >
               <i className="fas fa-sign-in-alt"></i>Sign in
             </NavLink>
             <NavLink
-              className={`${styles.NavLink} ${isDarkMode ? styles["dark-mode"] : styles["light-mode"]}`}
-              activeClassName={`${styles.Active} ${isDarkMode ? styles["dark-mode"] : styles["light-mode"]}`}
+              className={navLinkClasses}
+              activeClassName= {navLinkActiveClasses}
               to="/create"
             >
               <i className="fas fa-user-plus"></i>Sign up
             </NavLink>
             <NavLink
-              className={`${styles.NavLink} ${isDarkMode ? styles["dark-mode"] : styles["light-mode"]}`}
-              activeClassName={`${styles.Active} ${isDarkMode ? styles["dark-mode"] : styles["light-mode"]}`}
+              className={navLinkClasses}
+              activeClassName= {navLinkActiveClasses}
               to="/user-favorites/"
             >
               <i className="fa-solid fa-heart"></i>

@@ -1,57 +1,59 @@
-@import '../../styles/_variables.scss';
+@import "../../styles/main.scss";
 
-/* For Light Mode */
-.NavBar.light-mode {
+// * For Light Mode *
+.NavBar {
   background-color: $light-bg-primary-color;
   color: $light-text-primary-color;
   border: 1px solid $light-bg-primary-color;
+
+  &.dark {
+    background-color: $dark-bg-primary-color;
+    color: $dark-text-primary-color;
+    border: 1px solid $dark-bg-primary-color;
+  }
 }
 
-/* For Dark Mode */
-.NavBar.dark-mode {
-  background-color: $dark-bg-primary-color;
-  color: $dark-text-primary-color;
-  border: 1px solid $dark-bg-primary-color;
 
-}
-
-.NavLink.light-mode {
+.NavLink {
   padding: 10px;
   color: $light-text-secondary-color;
+
+
+  &.dark {
+    padding: 10px;
+    color: $dark-text-secondary-color;
+  }
 }
 
-.NavLink.dark-mode {
-  padding: 10px;
-  color: $dark-text-secondary-color;
-}
-
-.NavLink.light-mode:hover {
-  color:$light-text-primary-color;
+.NavLink:hover {
+  color: $light-text-primary-color;
   background-color: $light-bg-secondary-color;
-  border-radius:9999px;
+  border-radius: 9999px;
+
+
+  &.dark {
+    color: $dark-text-primary-color;
+    background-color: $dark-bg-secondary-color;
+    border-radius: 9999px;
+  }
 }
 
-.NavLink.dark-mode:hover {
-  color: $dark-text-primary-color;
-  background-color: $dark-bg-secondary-color;
-  border-radius:9999px;
-}
-
-.NavLink.light-mode:active {
-  color:$light-text-primary-color;
+.NavLink:active {
+  color: $light-text-primary-color;
   font-weight: bold;
+
+
+  &.dark {
+    color: $dark-text-primary-color;
+    font-weight: bold;
+  }
 }
 
-.NavLink.dark-mode:active {
-  color: $dark-text-primary-color;
-  font-weight: bold;
-  
-}
-
-.Active.light-mode i {
+.Active i {
   color: $light-brand-primary-color;
-}
 
-.Active.dark-mode i {
-  color: $dark-brand-primary-color;
+
+  &.dark {
+    color: $dark-brand-primary-color;
+  }
 }
