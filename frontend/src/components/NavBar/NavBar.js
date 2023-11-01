@@ -18,7 +18,7 @@ const NavBar = () => {
     const navLinkClasses = `${styles.NavLink} ${isDark ? styles["dark"] : styles}`;
     console.log("Dark-navLinkClasses:", isDark)
     
-    // Apply the 'dark' class to the NavLink component conditionally
+    // Apply the 'dark' class to the NavLink Active component conditionally
     const navLinkActiveClasses = `${styles.Active} ${isDark ? styles["dark"] : styles}`;
     console.log("Dark-navLinkActiveClasses:", isDark)
 
