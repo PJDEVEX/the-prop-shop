@@ -48,7 +48,7 @@ body.dark {
 }
 .Content.dark {
   background-color: #000000;
-  border: 1px solid #363636;
+  border: 1px solid #242526;
 }
 
 .FillerImage {
@@ -107,10 +107,10 @@ i {
 i:hover {
   cursor: pointer;
   transition: color ease-in-out 0.3s;
-  color: #ff66c4;
+  color: #094ba3;
 }
 i:hover.dark {
-  color: #ff66c4;
+  color: #094ba3;
 }
 
 figure {
