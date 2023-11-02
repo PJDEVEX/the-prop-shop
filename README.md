@@ -383,7 +383,7 @@ By evaluating and comparing the features, performance, and user experience of La
 15. [A Simple SCSS Architecture, and Best Practice Playbook](https://matthewelsom.com/blog/simple-scss-playbook.html)
 16. [React and Sass Tutorial - Intro to SASS](https://www.youtube.com/watch?v=kpcjSaRngg8)
 17. [SASS Tutorial (Build Your Own CSS Library)](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jxJX7vojNVK-o8ubDZEcNb)
-18. 
+18. [Dark mode in React: An in-depth guide](https://blog.logrocket.com/dark-mode-react-in-depth-guide/#using-system-settings)
 
 ### Tools used
 
