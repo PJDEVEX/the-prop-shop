@@ -17,7 +17,7 @@ h3 {
   font-size: 1.5rem;
 }
 
-p {
+p, .wrapper .form-field input {
   font-family: "Raleway", sans-serif;
   font-size: 16px;
   line-height: 1.5;
@@ -31,7 +31,7 @@ body {
   color: #000000;
   min-height: 100vh;
 }
-body.dark-mode {
+body.dark {
   background-color: #000000;
   color: #FFFFFF;
 }
@@ -46,9 +46,9 @@ body.dark-mode {
   border-radius: 2px;
   border: 1px solid #D3D3D3;
 }
-.Content.dark-mode {
+.Content.dark {
   background-color: #000000;
-  border: 1px solid #363636;
+  border: 1px solid #242526;
 }
 
 .FillerImage {
@@ -75,7 +75,7 @@ a {
   text-decoration-line: none;
   text-shadow: 2cap;
 }
-a.dark-mode {
+a.dark {
   color: #D3D3D3;
 }
 
@@ -83,7 +83,7 @@ a:hover {
   color: #CCCCCC;
   text-decoration: none;
 }
-a:hover.dark-mode {
+a:hover.dark {
   color: #D3D3D3;
 }
 
@@ -91,7 +91,7 @@ a:hover i {
   color: #094ba3;
   transition: color ease-in-out 0.3s;
 }
-a:hover i.dark-mode {
+a:hover i.dark {
   color: #094ba3;
 }
 
@@ -107,10 +107,10 @@ i {
 i:hover {
   cursor: pointer;
   transition: color ease-in-out 0.3s;
-  color: #ff66c4;
+  color: #094ba3;
 }
-i:hover.dark-mode {
-  color: #ff66c4;
+i:hover.dark {
+  color: #094ba3;
 }
 
 figure {
@@ -135,16 +135,25 @@ figure {
   background: #000000;
 }
 
+/* Styles for the wrapper element */
 .wrapper {
   max-width: 350px;
   min-height: 500px;
   margin: 80px auto;
   padding: 40px 30px 30px 30px;
-  background-color: #D3D3D3;
-  border-radius: 15px;
-  box-shadow: 13px 13px 20px #FFFFFF, -13px -13px 20px #D3D3D3;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  border: 2px solid #D3D3D3;
+  box-shadow: 5px 5px 10px 2px #D3D3D3;
+}
+.wrapper.dark {
+  /* Dark Mode styles */
+  background-color: #242526;
+  border: 2px solid #242526;
+  box-shadow: 5px 5px 10px 2px #242526;
 }
 
+/* Styles for the logo */
 .logo {
   width: 80px;
   margin: auto;
@@ -154,64 +163,96 @@ figure {
   height: 80px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0px 0px 3px #5f5f5f, 0px 0px 0px 5px #ecf0f3, 8px 8px 15px #a7aaa7, -8px -8px 15px #fff;
 }
 
+/* Styles for the name element */
 .wrapper .name {
-  font-weight: 600;
-  font-size: 1.4rem;
+  font-weight: 900;
+  font-size: 1.5rem;
   letter-spacing: 1.3px;
   padding-left: 10px;
-  color: #555;
+  color: #000000;
+}
+.wrapper .name.dark {
+  /* Dark Mode styles */
+  color: #FFFFFF;
 }
 
+/* Styles for form fields */
 .wrapper .form-field {
   padding-left: 10px;
+  padding-right: 20px;
   margin-bottom: 20px;
+  background: #D3D3D3;
   border-radius: 20px;
-  box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+  /* Styles for input elements within form fields */
+  /* Styles for .far elements within form fields */
 }
 .wrapper .form-field input {
   width: 100%;
   display: block;
+  background-color: transparent;
   border: none;
   outline: none;
-  background: none;
-  font-size: 1.2rem;
-  color: #666;
+  color: #000000;
   padding: 10px 15px 10px 10px;
 }
-.wrapper .form-field .fas {
-  color: #555;
+.wrapper .form-field input.dark {
+  /* Dark Mode styles for input elements */
+  color: #FFFFFF;
+}
+.wrapper .form-field .far {
+  color: #000000;
+}
+.wrapper .form-field .far.dark {
+  /* Dark Mode styles for .far elements */
+  color: #FFFFFF;
 }
 
+/* Styles for buttons */
 .wrapper .btn {
+  color: #FFFFFF;
   box-shadow: none;
-  width: 100%;
+  width: 50%;
   height: 40px;
-  background-color: #03A9F4;
-  color: #fff;
+  background-color: #094ba3;
   border-radius: 25px;
-  box-shadow: 3px 3px 3px #b1b1b1, -3px -3px 3px #fff;
-  letter-spacing: 1.3px;
+  /* Hover styles for buttons */
 }
 .wrapper .btn:hover {
-  background-color: #039BE5;
+  color: #D3D3D3;
+  transition: transform 0.2s;
+}
+.wrapper .btn:hover.dark {
+  /* Dark Mode styles for buttons on hover */
+  color: #242526;
 }
 
+/* Styles for links */
 a {
-  text-decoration: none;
   font-size: 0.8rem;
-  color: #03A9F4;
+  text-decoration: none;
+  color: #000000;
+  /* Hover styles for links */
 }
 a:hover {
-  color: #039BE5;
+  color: #094ba3;
+  font-size: 0.81rem;
+}
+a:hover.dark {
+  /* Dark Mode styles for links on hover */
+  color: #094ba3;
+  font-size: 0.81rem;
 }
 
+/* Media query for small screens */
 @media (max-width: 380px) {
   .wrapper {
     margin: 30px 20px;
     padding: 40px 15px 15px 15px;
+  }
+  .wrapper.dark {
+    /* Dark Mode styles within the media query */
+    background-color: #000000;
   }
 }/*# sourceMappingURL=SignInUp.module.css.map */
