@@ -100,10 +100,10 @@ i {
 i:hover {
     cursor: pointer;
     transition: color ease-in-out 0.3s;
-    color: $light-brand-secondary-color;
+    color: $light-brand-primary-color;
 
     &.dark {
-        color: $dark-brand-secondary-color;
+        color: $dark-brand-primary-color;
     }
 
 }
