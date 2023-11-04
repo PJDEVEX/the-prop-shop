@@ -6,8 +6,11 @@ import { Form, Button, Container, Alert } from "react-bootstrap";
 import { useColorScheme } from "../../hooks/useColorScheme";
 import axios from "axios";
 import SocialLogin from "../SocialLogin";
+import {useSetCurrentUser} from '../../contexts/CurrentUserContext'
 
 function SignInForm () {
+  const setCurrentUser = useSetCurrentUser();
+
   // Determine if the app is in dark mode
   const { isDark } = useColorScheme();
   const darkClass = isDark ? styles["dark"] : "";
@@ -37,8 +40,9 @@ function SignInForm () {
     event.preventDefault();
     try {
       // Send a POST request to create a user
-      await axios.post("api-auth/token", signInData);
+      const {data } = await axios.post("api-auth/token", signInData);
       // Redirect to the sign-in page on successful registration
+      setCurrentUser(data.user)
       history.push("/");
     } catch (error) {
       // Set errors if there is a response from the server
@@ -77,7 +81,7 @@ function SignInForm () {
             type="email"
             name="email"
             placeholder="Enter your email"
-            value={signInData.email}
+            value={email}
             onChange={handleChange}
           />
         </Form.Group>
@@ -98,7 +102,7 @@ function SignInForm () {
             type="password"
             name="password"
             placeholder="Password"
-            value={signInData.password}
+            value={password}
             onChange={handleChange}
           />
         </Form.Group>
