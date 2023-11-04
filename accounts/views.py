@@ -69,7 +69,7 @@ class CreateAccount(APIView):
                 try:
                     # Attempt to obtain an access token
                     r = requests.post(
-                        "https://8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu105.gitpod.io/api-auth/token",
+                        "https://8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu105.gitpod.io/api-auth/token/",
                         data={
                             "username": new_user.email,
                             "password": request.data["password"],
