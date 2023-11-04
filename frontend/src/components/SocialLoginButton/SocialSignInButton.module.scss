@@ -1,0 +1,51 @@
+@import "../../styles/variables";
+
+// SocialSignInButton.module.scss
+.social-login-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.btn-facebook,
+.btn-google {
+  background-color: $light-brand-primary-color;
+  /* Remove the background */
+  color: #000;
+  /* Change text color to black */
+  height: 30px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 20px;
+  margin: 10px;
+}
+
+.btn-facebook img,
+.btn-google img {
+  width: 24px;
+  /* Adjust the logo size as needed */
+  margin: 20px;
+}
+
+@media (max-width: 768px) {
+
+  .social-login-container {
+    justify-content: flex-end;
+
+  }
+
+  .btn-facebook,
+  .btn-google {
+    height: 30px;
+    width: 90%;
+  }
+
+  .btn-facebook img,
+  .btn-google img {
+    width: 24px;
+    /* Adjust the logo size as needed */
+    margin: 20px;
+  }
+}
