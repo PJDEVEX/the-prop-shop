@@ -5,20 +5,22 @@ import styles from "./SignInUp.module.css";
 import { Form, Button, Container, Alert } from "react-bootstrap";
 import { useColorScheme } from "../../hooks/useColorScheme";
 import axios from "axios";
-import SocialLogin from "./../SocialLogin";
+import SocialLogin from "../SocialLogin";
 
-const SignUpForm = () => {
+function SignUpForm () {
   // Determine if the app is in dark mode
   const { isDark } = useColorScheme();
   const darkClass = isDark ? styles["dark"] : "";
 
   // State to store user sign-up data and errors
-  const [SignUpData, setSignUpData] = useState({
+  const [signUpData, setSignUpData] = useState({
     email: "",
     username: "",
     first_name: "",
     password: "",
   });
+
+  const { email, username, first_name, password} = signUpData
 
   const [errors, setErrors] = useState({});
 
@@ -27,7 +29,7 @@ const SignUpForm = () => {
   // Handle changes in form fields
   const handleChange = (event) => {
     setSignUpData({
-      ...SignUpData,
+      ...signUpData,
       [event.target.name]: event.target.value,
     });
   };
@@ -37,7 +39,7 @@ const SignUpForm = () => {
     event.preventDefault();
     try {
       // Send a POST request to create a user
-      await axios.post("/api/create/", SignUpData);
+      await axios.post("/api/create/", signUpData);
       // Redirect to the sign-in page on successful registration
       history.push("/login/");
     } catch (error) {
@@ -77,7 +79,7 @@ const SignUpForm = () => {
             type="email"
             name="email"
             placeholder="Email"
-            value={SignUpData.email}
+            value={signUpData.email}
             onChange={handleChange}
           />
         </Form.Group>
@@ -98,7 +100,7 @@ const SignUpForm = () => {
             type="text"
             name="username"
             placeholder="User Name"
-            value={SignUpData.username}
+            value={signUpData.username}
             onChange={handleChange}
           />
         </Form.Group>
@@ -119,7 +121,7 @@ const SignUpForm = () => {
             type="text"
             name="first_name"
             placeholder="First Name"
-            value={SignUpData.first_name}
+            value={signUpData.first_name}
             onChange={handleChange}
           />
         </Form.Group>
@@ -140,7 +142,7 @@ const SignUpForm = () => {
             type="password"
             name="password"
             placeholder="Password"
-            value={SignUpData.password}
+            value={signUpData.password}
             onChange={handleChange}
           />
         </Form.Group>
@@ -156,7 +158,7 @@ const SignUpForm = () => {
       </Form>
 
       <Container className={`mt-3 ${darkClass}`}>
-        <Link className={`${styles.link} ${darkClass}`} to="/signin">
+        <Link className={`${styles.link} ${darkClass}`} to="/login">
           Already have an account? <span>Sign in</span>
         </Link>
       </Container>
