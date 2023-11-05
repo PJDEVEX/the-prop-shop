@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "../../assets/logo.png";
 import styles from "./NavBar.module.css";
 import { NavLink } from "react-router-dom";
 import ColorModeToggle from "../DarkModeToggle";
 import { useColorScheme } from "../../hooks/useColorScheme";
-import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 const NavBar = () => {
   const { isDark } = useColorScheme();
@@ -26,7 +26,7 @@ const NavBar = () => {
   }`;
   console.log("Dark-navLinkActiveClasses:", isDark);
 
-  const currentUser = useContext(CurrentUserContext);
+  const currentUser = useCurrentUser();
 
   const loggedInIcons = <>{currentUser?.username}</>;
   const loggedOutIcons = (
