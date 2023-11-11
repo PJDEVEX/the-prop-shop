@@ -15,15 +15,15 @@ class CreateAccount(APIView):
         if reg_serializer.is_valid():
             new_user = reg_serializer.save()
             if new_user:
-                token_url = reverse('/api-auth/token')
-                data = {
+                base_url = request.build_absolute_uri('/')[:-1]
+                token_url = f'{base_url}/api-auth/token'
+                r = requests.post(token_url, data={
                     'username': new_user.email,
                     'password': request.data['password'],
                     'client_id': 'Your Client ID',
                     'client_secret': 'Your Client Secret',
                     'grant_type': 'password'
-                }
-                r = requests.post(token_url, data=data)
+                })
                 return Response(status=status.HTTP_201_CREATED)
         return Response(reg_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
