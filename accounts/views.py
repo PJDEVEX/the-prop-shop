@@ -29,7 +29,7 @@ class CreateAccount(APIView):
 
 
 class AllUsers(generics.ListAPIView):
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAuthenticated]
     queryset = Account.objects.all()
     serializer_class = UsersSerializer
 
@@ -38,5 +38,5 @@ class CurrentUser(APIView):
     permission_classes = (permissions.IsAuthenticated,)
 
     def get(self, request):
-        serializer = UsersSerializer(self.request.user)
+        serializer = UsersSerializer(self.request.user, context={"request": request})
         return Response(serializer.data)
