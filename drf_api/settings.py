@@ -16,8 +16,8 @@ import dj_database_url
 
 if os.path.exists("env.py"):
     import env
-
-DEBUG = os.environ.get("DEBUG", False)
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = os.environ.get("DEBUG")
 
 
 # Config Cloudinary storage
@@ -36,10 +36,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY")
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = "DEBUG" in os.environ
-
 
 INSTALLED_APPS = [
     # Django Built-in Apps
@@ -142,12 +138,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "drf_api.urls"
 
-if DEBUG:
-    ALLOWED_HOSTS = [
-        "8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu106.gitpod.io",
+ALLOWED_HOSTS = [
+    os.environ.get("ALLOWED_HOSTS"),
+    "8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu106.gitpod.io",
     ]
-else:
-    ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
 
 CSRF_TRUSTED_ORIGINS = os.environ.get(
     "CSRF_TRUSTED_ORIGINS", ""
