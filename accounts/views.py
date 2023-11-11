@@ -15,7 +15,7 @@ class CreateAccount(APIView):
         if reg_serializer.is_valid():
             new_user = reg_serializer.save()
             if new_user:
-                token_url = reverse('token')
+                token_url = reverse('/api-auth/token')
                 data = {
                     'username': new_user.email,
                     'password': request.data['password'],
