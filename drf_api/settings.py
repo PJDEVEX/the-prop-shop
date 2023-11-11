@@ -17,7 +17,7 @@ import dj_database_url
 if os.path.exists("env.py"):
     import env
 
-DEV = os.environ.get("DEV", False)
+DEBUG = os.environ.get("DEBUG", False)
 
 
 # Config Cloudinary storage
@@ -54,8 +54,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",  # this is a built-in app
     "cloudinary",
     "rest_framework",
-    "dj_rest_auth",
-    "rest_framework.authtoken",
     "oauth2_provider",
     "social_django",
     "drf_social_oauth2",
@@ -110,10 +108,11 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = [
 ]
 
 REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES": [
-        "rest_framework.authentication.SessionAuthentication"
-        if "DEBUG" in os.environ
-        else "oauth2_provider.contrib.rest_framework.OAuth2Authentication",
+    "DEFAULT_AUTHENTICATION_CLASSES":
+    ["rest_framework.authentication.SessionAuthentication"]
+        if DEBUG
+        else [
+        "oauth2_provider.contrib.rest_framework.OAuth2Authentication",
         "drf_social_oauth2.authentication.SocialAuthentication",
     ],
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
@@ -143,10 +142,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "drf_api.urls"
 
-if DEV:
+if DEBUG:
     ALLOWED_HOSTS = [
-        "8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu105.gitpod.io",
-        "localhost",
+        "8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu106.gitpod.io",
     ]
 else:
     ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
@@ -181,7 +179,7 @@ WSGI_APPLICATION = "drf_api.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 # Databases for DEBUG=1:SQLite and production: PostgresSQL
-if "DEV":
+if DEBUG:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
