@@ -140,6 +140,7 @@ ROOT_URLCONF = "drf_api.urls"
 
 ALLOWED_HOSTS = [
     os.environ.get("ALLOWED_HOSTS"),
+    "localhost",
     "8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu106.gitpod.io",
     ]
 
