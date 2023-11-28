@@ -18,9 +18,9 @@ urlpatterns = [
     # Custom HTML template
     #  path("", TemplateView.as_view(template_name="index.html")),
     # Accounts views
-    path("api/", include("accounts.urls", namespace="users")),
+    path("", include("accounts.urls", namespace="users")),
     # listings views
-    path("api/", include("listings.urls", namespace="listings")),
+    path("", include("listings.urls", namespace="listings")),
     # Favorite Views
-    path("api/", include("favorites.urls", namespace="favorites")),
+    path("", include("favorites.urls", namespace="favorites")),
 ]
