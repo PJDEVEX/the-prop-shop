@@ -138,11 +138,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "drf_api.urls"
 
-ALLOWED_HOSTS = [
-    os.environ.get("ALLOWED_HOSTS"),
-    "localhost",
-    "8000-pjdevex-thepropshop-fhncw5hdrsb.ws-eu106.gitpod.io",
-    ]
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
 
 CSRF_TRUSTED_ORIGINS = os.environ.get(
     "CSRF_TRUSTED_ORIGINS", ""
@@ -161,6 +157,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                # Social authentication
                 "social_django.context_processors.backends",
                 "social_django.context_processors.login_redirect",
             ],
